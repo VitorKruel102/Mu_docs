@@ -8,7 +8,7 @@ markdown_extensions:
 
 theme:
 
-  repo_url: https://github.com/muteis/Funcoes/actions/new
+  repo_url: https://github.com/VitorKruel102/Mu_docs/blob/main/mkdocs.yml
 
   logo: https://avatars.githubusercontent.com/u/98105790?
 
@@ -34,13 +34,6 @@ extra:
     - icon: fontawesome/brands/github
       link: https://github.com/muteis
       name: Git
-
-markdown_extensions:
-  - pymdownx.tasklist  # Lista de tarefas
-  - pymdownx.emoji  # Emojis
-  - pymdownx.mark
-  - pymdownx.tilde
-  - pymdownx.highlight
 
 extra_css:
   - https://unpkg.com/mermaid@8.5.1/dist/mermaid.css
