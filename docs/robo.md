@@ -16,7 +16,7 @@ sempre dentro dos sinais de chevron (sinal de “maior que” e “menor que”)
 ## **Estrutura das tags:**
 
 ### <*Nome*> <*Capital*>
-As duas primeiras tags que vamos estudas são utilizados para nomear a estratégia e informar o capital inicial da carteira, por padrão utilizamos 100 milhões para fins de backtests. 
+As duas primeiras tags que vamos estudas são utilizados para nomear a estratégia e informar o capital inicial da carteira, por padrão utilizamos 100 milhões para fins de backtests. Teste 
 
 ```{.py3 hl_lines="" linenums="4" title=""}
 
