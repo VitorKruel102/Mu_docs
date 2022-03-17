@@ -16,7 +16,7 @@ sempre dentro dos sinais de chevron (sinal de “maior que” e “menor que”)
 ## **Estrutura das tags:**
 
 ### <*Nome*> <*Capital*>
-As duas primeiras tags que vamos estudas são utilizados para nomear a estratégia e informar o capital inicial da carteira, por padrão utilizamos 100 milhões para fins de backtests. Teste 
+As duas primeiras tags que vamos estudas são utilizados para nomear a estratégia e informar o capital inicial da carteira, por padrão utilizamos 100 milhões para fins de backtests.
 
 ```{.py3 hl_lines="" linenums="4" title=""}
 
@@ -28,7 +28,8 @@ As duas primeiras tags que vamos estudas são utilizados para nomear a estratég
 
 ### <*ComandoInicio*>
 
-Utilizado para determinar variáveis fixas, ou seja, na execução da estratégia o solfware irá analisar apenas uma vez a tag *COMANDO INICIO*.
+O **Comando Inicio** é inicializado apenas no começo da estratégia, podemos utiliza-lo para determinar variáveis com o objetivo de serem
+parâmetros padrões para o restante da execução.
 
 ```{.py3 hl_lines="" linenums="8" title=""}
 
