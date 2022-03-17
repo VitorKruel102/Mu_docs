@@ -1,0 +1,54 @@
+site_name: Documentação - Funções
+
+markdown_extensions:
+  - pymdownx.emoji
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight
+
+theme:
+
+  repo_url: https://github.com/muteis/Funcoes/actions/new
+
+  logo: https://avatars.githubusercontent.com/u/98105790?
+
+  font:
+    text: Roboto
+  features:
+    - navigation.tabs
+
+  name: material
+  palette:
+    - scheme: default
+      primary: black
+      toggle:
+        icon: material/weather-sunny
+        name: Modo noturno
+    - scheme: slate
+      primary: black
+      toggle:
+        icon: material/weather-night
+        name: Modo claro
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/muteis
+      name: Git
+
+
+markdown_extensions:
+  - pymdownx.tasklist  # Lista de tarefas
+  - pymdownx.emoji  # Emojis
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.highlight
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_div_format
+
+extra_css:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.css
+extra_javascript:
+  - https://unpkg.com/mermaid@8.5.1/dist/mermaid.min.js
