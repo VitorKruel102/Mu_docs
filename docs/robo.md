@@ -45,7 +45,7 @@ parâmetros padrões para o restante da execução.
 
 ### <*Custos*>
 
-Essa tag é responsável por informar os custos/taxas das operações, por padrão, não é alterado os valores desta estrutura.
+Essa tag é responsável por informar os custos/taxas das operações, são alterados conforme o tipo de ativo que está sendo estudado.
 
 ```{.py3 hl_lines="" linenums="16" title=""}
 
@@ -75,7 +75,7 @@ Essa tag é responsável por informar os custos/taxas das operações, por padr�
 ### <*Drawdown*>
 
 Esse conjunto de tags refere-se a proteção do capital principal, onde é determinado uma    
-*Perda maxima, Drawdown maximo, os Gatilhos de Drawdown e Ganho maximo*. Os valores são padrões, não pode ser alterado. 
+*Perda maxima, Drawdown maximo, os Gatilhos de Drawdown e Ganho maximo*. 
 
 ```{.py3 hl_lines="" linenums="45" title=""}
 
@@ -88,7 +88,8 @@ Esse conjunto de tags refere-se a proteção do capital principal, onde é deter
 
 ### <*Comando*>
 
-Essa é a tag mais utilizado dentro da linguagem, nele irá conter todas as condições necessarias para poder adicionar ou não as ordens de compra ou venda de cada estrategia. A seguir um exemplo de uma estrategia: 
+Essa é a tag mais utilizada dentro da linguagem, nela irá conter todas as condições necessarias para poder adicionar ou não as ordens de compra ou venda de cada estratégia. 
+A seguir um exemplo de uma estrategia: 
 
 ```{.py3 hl_lines="" linenums="70" title=""}
 
@@ -128,7 +129,7 @@ Essa é a tag mais utilizado dentro da linguagem, nele irá conter todas as cond
 
 ### <*ComandoFim*>
 
-Será apenas executado no final da estratégia, utilizado normalmente para obter alguma informação específica no final do teste.
+O **Comando fim** é executado apenas no final da estratégia, utilizado normalmente para obter alguma informação específica no final do teste.
 
 ```{.py3 hl_lines="" linenums="107" title=""}
 
@@ -141,7 +142,7 @@ Será apenas executado no final da estratégia, utilizado normalmente para obter
 ```
 ### <*Naodesenha*>
 
-Utilizado quando necessario para não plotar uma função na tela.
+Sua funcionalidade é não plotar uma função na tela.
 
 ```{.py3 hl_lines="" linenums="113" title=""}
 
@@ -149,7 +150,7 @@ Utilizado quando necessario para não plotar uma função na tela.
 
     Minima()
     maxima()
-    fechamento()
+    Fechamento()
     
 </NAODESENHA>
 
