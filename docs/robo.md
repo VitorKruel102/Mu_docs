@@ -817,7 +817,7 @@ Referente a **ABERTURA** do Candle. Podendo ser utilizada sem parâmetros que re
 **Parâmetros:**
 
 1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
-2.  **PERPERÍODOIODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
 
 **Sintaxe:**
 
@@ -2799,7 +2799,6 @@ Utilizado para formatar o horário para o excel.
 
 <COMANDOINICIO>
 
-
     
 </COMANDOINICIO>
 
@@ -2815,6 +2814,7 @@ Grava um arquivo substituindo o anterior(caso existir).
 
 1.  **NOME_DO_ARQUIVO:** informar o nome do arquivo
 2.  **NOME_VARIAVEL:**  O nome da variavel e ser colocado no arquivo.
+
 
 **Sintaxe:**
 
