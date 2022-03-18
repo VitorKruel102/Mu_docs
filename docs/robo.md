@@ -35,9 +35,9 @@ parâmetros padrões para o restante da execução..
 
 <COMANDOINICIO>
 
-    Seta(#max_dia, maxima());
-    Seta(#min_dia,  minima());
-    Seta(#GATILHO, 0);	
+    SETA(#max_dia, maxima());
+    SETA(#min_dia,  minima());
+    SETA(#GATILHO, 0);	
 
 </COMANDOINICIO>
                   
@@ -62,7 +62,7 @@ Essa tag é responsável por informar os custos/taxas das operações, são alte
 
 ### <*Periodo*>
 
-É o periodo preferencial da estratégia, mas não é necessario mudar todas as vezes que for estudar outros tempos gráficos, dentro do sistema ao selecionar um novo período no gráfico, ele mudará automaticamente.
+É o período preferencial da estratégia, mas não é necessário mudar todas as vezes que for estudar outros tempos gráficos, dentro do sistema ao selecionar um novo período no gráfico, ele mudará automaticamente.
 
 ```{.py3 hl_lines="" linenums="23" title=""}
 
@@ -88,8 +88,8 @@ Esse conjunto de tags refere-se a proteção do capital principal, onde é deter
 
 ### <*Comando*>
 
-Essa é a tag mais utilizada dentro da linguagem, nela irá conter todas as condições necessarias para poder adicionar ou não as ordens de compra ou venda de cada estratégia. 
-A seguir um exemplo de uma estrategia: 
+Essa é a tag mais utilizada dentro da linguagem, nela irá conter todas as condições necessárias para poder adicionar ou não as ordens de compra ou venda de cada estratégia. 
+A seguir um exemplo de uma estratégia: 
 
 ```{.py3 hl_lines="" linenums="70" title=""}
 
@@ -135,7 +135,7 @@ O **Comando fim** é executado apenas no final da estratégia, utilizado normalm
 
 <COMANDOFIM>
 
-    Loga('Valor total',SaldoPosicoes());
+    Loga('Valor total', SaldoPosicoes());
     
 </COMANDOFIM>
 
@@ -160,7 +160,7 @@ Sua funcionalidade é não plotar uma função na tela.
 
 Um **valor** é uma das coisas básicas com as quais um programa trabalha, como letra ou um número. Alguns valores que vimos até agora foi *12*, 0.0000008 e *'Valor total'*, por exemplo.
 
-Esses valores pertecem a **tipos** diferentes: *12* é um número inteiro, *0.0000008* é um **número de ponto flutuante** e *'Valor total'* é uma string, assim chamada porque as letras que contém estão em uma sequência em cadeia.
+Esses valores pertecem a **tipos** diferentes: *12* é um número inteiro, *0.0000008* é um **número de ponto flutuante** e *'Valor total'* é uma string, assim chamada porque as letras que contém estão em uma sequência em cadeia (dentro de aspas simples).
 
 ### Exemplos 
 
@@ -179,28 +179,26 @@ Esses valores pertecem a **tipos** diferentes: *12* é um número inteiro, *0.00
 
 ### **Começando a calcular**
 
-A linguagem usa como padrão para realizar os seus cálculos a Notção Polonesa Reversa(RPN). Vamos para os exemplos e a diferença entre os cálculos convencionais e os cálculos com a Notação Polonesa Reversa.
+A linguagem usa como padrão para realizar os seus cálculos a Notação Polonesa Reversa(RPN). Perceba a seguir a diferença entre os cálculos convencionais e os cálculos com a Notação Polonesa Reversa.
 
-|**Calculo convencionais**        |**Calculo RPN**            |
-|                                 |                           |
-|10 + 20  **R:30**                |10 20 +   **R:30**         |
-|5 * 5  **R:25**                  |5 5 *   **R:25**           |
-|5 / 5  **R:1**                   |5 5 /   **R:1**            |
-|100 - 30  **R:70**               |100 30 -   **R:70**        |
-|100 - 30 + 150  **R:220**        |100 30 150 - +  **R:220**  |
-
-
+|**Cálculos convencionais**        |**Cálculos com RPN**            |
+|                                  |                                |
+|10 + 20  **R:30**                 |10 20 +   **R:30**              |
+|5 * 5  **R:25**                   |5 5 *   **R:25**                |
+|5 / 5  **R:1**                    |5 5 /   **R:1**                 |
+|100 - 30  **R:70**                |100 30 -   **R:70**             |
+|100 - 30 + 150  **R:220**         |100 30 150 - +  **R:220**       |
 
 ### ==Resto( )==
 
 **Descrição:**
 
-Retorna o resto da dívisão
+Retorna o resto da dívisão.
 
 **Parâmetros:**
 
-1.  **VALOR** Dividendo
-2.  **VALOR** Divisor
+1.  **VALOR:** Dividendo
+2.  **VALOR:** Divisor
 
 **Sintaxe:**
 
@@ -208,12 +206,11 @@ Retorna o resto da dívisão
 
 <COMANDO>
 					
-   Seta(#resto, Resto(348, 6))
+   SETA(#RESTO_DIVISAO, Resto(348, 6));
 
 </COMANDO>
+
 ```
-
-
 ### ==Logaritmo( )==
 
 **Descrição:**
@@ -222,7 +219,7 @@ Retorna o resto da dívisão
 
 **Parâmetros:**
 
-1.  **Valor -** O valor a ser cálculado.
+1.  **VALOR:** O valor a ser calculado.
 
 **Sintaxe:**
 
@@ -230,7 +227,7 @@ Retorna o resto da dívisão
 
 <COMANDO>
 					
-    Logaritmo(#variavel)
+    SETA(#LOG10, Logaritmo(10));
 
 </COMANDO>
 ```
@@ -243,7 +240,7 @@ Utilizado para retornar uma potência de um número
 
 **Parâmetros:**
 
-1.  **Valor -** O valor a ser cálculado.
+1.  **VALOR:** O valor a ser calculado.
 
 **Sintaxe:**
 
@@ -251,21 +248,20 @@ Utilizado para retornar uma potência de um número
 
 <COMANDO>
 					
-    Seta(#Potencia_10, Potencia(10));
+    SETA(#Potencia_10, Potencia(10));
 
 </COMANDO>
 ```
-
 ### ==SomaMatriz( )==
 
 **Descrição:**
 
-Utilizado para somar os valores dentro de uma matriz
+Utilizado para somar os valores de dentro de uma matriz. Onde sua função é pegar a soma de uma matriz e atribuir dentro de uma variável.
 
 **Parâmetros:**
 
-1.  **NOME_VARIAVEL_DESTINO -** O nome da variavel que retornará o valor da soma da matriz.
-2.  **NOME_VARIAVEL_MATRIZ -** O nome da matriz.
+1.  **NOME_VARIAVEL_DESTINO:** O nome da variavel que retornará o valor da soma da matriz.
+2.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
 
 **Sintaxe:**
 
@@ -286,7 +282,7 @@ Utilizado para zerar valores de uma matriz.
 
 **Parâmetros:**
 
-1.  **NOME_VARIAVEL_MATRIZ -** O nome da matriz.
+1.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
 
 **Sintaxe:**
 
@@ -299,34 +295,35 @@ Utilizado para zerar valores de uma matriz.
 </COMANDO>
 ```
 
-## **Comentários:**
 
+## **Comentários:**
 ### ==/comentario/==
 
-Conforme os programas ficam maiores e mais complicados, eles sõa mais difíceis de ler. As linguagens formais são densas e mioras vezes é díficil ver um pedaço de código e compreender o que ela faz ou por que isso.
+Conforme os programas ficam maiores e mais complexos, eles são mais difíceis de ler. As linguagens formais são densas e na maioria das vezes é díficil ver um pedaço de código e compreender o que ela faz ou por que utilizamos ela.
 
-Por essa razão, é uma boa ideia acrescentar notas aos seus programas para explicar em linguagem natual o que o programa está fazendo. Essas notas são chamadas de **comentários**, e começam com o símbolo barra e asterisco e terminam com asterisco e barra.
+Por essa razão, é uma boa ideia acrescentar notas aos seus programas para explicar em uma linguagem natural o que o programa está fazendo. Essas notas são chamadas de **comentários**, e começam com o símbolo barra e asterisco e terminam com asterisco e barra.
 
 
 ```{.py3 hl_lines="" linenums="60" title="Seta( )"}
+
 <COMANDO>
         
     /*Estrategia XPS*/
     
-    Seta(#fecha, fechamento());  /*Fechamento atual*/
+    SETA(#FECHA, fechamento());  /*Fechamento atual*/
     
     . . .
 
 <COMANDO> 
 ```
-## **Nomes de variáveis:**
+## **Determinar variáveis:**
 
 ### ==Seta()==
 
 **Descrição:**
 
 Seta é uma variável. O seu objeto é capaz de reter e representar um valor ou expressão. 
-Enquanto as variáveis só “existem” em tempo de execução, elas são associadas a “nomes”, chamados identificadores, durante o tempo de desenvolvimento.
+Enquanto as variáveis só “existem” em tempo de execução, elas são associadas a *“nomes”*, chamados identificadores, durante o tempo de desenvolvimento.
 
 **Parâmetros:**
 
@@ -338,7 +335,8 @@ Enquanto as variáveis só “existem” em tempo de execução, elas são assoc
 ```{.py3 hl_lines="" linenums="60" title="Seta( )"}
 <COMANDO>
         
-    Seta(#NOMA_VARIAVEL, 1);  /*Valores;*/
+    SETA(#NOME_VARIAVEL, 1);       /*Valores*/
+    SETA(@NOME_STRING, 'TEXTO');   /*Strings*/
    
 <COMANDO> 
 ```
@@ -346,9 +344,9 @@ Enquanto as variáveis só “existem” em tempo de execução, elas são assoc
 
 **Descrição:**
 
-Para definir uma matriz, é muito parecido para definir uma variavel, utilizamos a mesma função, porém com algumas diferenças na hora de atribuir um valor.
-
-**Nota:** ==Usamos essa função nas tags: COMANDOINICIO, COMANDO E COMANDOFIM;==
+Uma matriz(vetores) é uma lista que aceita uma complexidade bem maior de operações e uma infinidade de métodos para utiliza-los. Uma matriz contém três tipos
+de vetores: X, Y e Z. Para definir uma matriz, é muito parecido para definir uma variável, utilizamos a mesma função, porém com algumas diferenças na hora 
+de atribuir um valor. Para cada valor atribuido, existe um indice específico.
 
 **Parâmetros:**
 
@@ -357,7 +355,7 @@ Para definir uma matriz, é muito parecido para definir uma variavel, utilizamos
 
 **Sintaxe:**
 
-Existe DUAS formas de determinar uma matriz:
+Existe DUAS formas para determinar uma matriz:
 
 
 ```{.py3 hl_lines="" linenums="60" title="Seta( )"}
@@ -367,46 +365,45 @@ Existe DUAS formas de determinar uma matriz:
     /*ADICIONANDO VALORES NA MATRIZ*/    
     
     /*Forma para adicionar no final da matriz*/
-    Seta(#NOME_VARIAVEL(FIM), 1);  /*Atribuindo um valor no vetor X;*/
-    Seta(#NOME_VARIAVEL(FIM, FIM), 2);  /*Atribuindo um valor no vetor Y;*/
-    Seta(#NOME_VARIAVEL(FIM, FIM, FIM), 3);  /*Atribuindo um valor no vetor Z;*/
+    SETA(#NOME_VARIAVEL(FIM), 1);             /*Atribuindo um valor no vetor X*/
+    SETA(#NOME_VARIAVEL(FIM, FIM), 2);        /*Atribuindo um valor no vetor Y*/
+    SETA(#NOME_VARIAVEL(FIM, FIM, FIM), 3);   /*Atribuindo um valor no vetor Z*/
 
-    /*Forma para adicionar em um index especifico*/
-    Seta(#NOME_VARIAVEL(1), 3);  /*Atribuindo um valor no indice em X;*/
-    Seta(#NOME_VARIAVEL(1,1), 3);  /*Atribuindo um valor no indice em Y;*/
-    Seta(#NOME_VARIAVEL(1,1,1), 3);  /*Atribuindo um valor no indice em Z;*/
+    /*Forma para adicionar em um index específico*/
+    SETA(#NOME_VARIAVEL(1), 3);               /*Atribuindo um valor no indice em X*/
+    SETA(#NOME_VARIAVEL(1,1), 3);             /*Atribuindo um valor no indice em Y*/
+    Seta(#NOME_VARIAVEL(1,1,1), 3);           /*Atribuindo um valor no indice em Z*/
 
     /*ADICIONANDO STRING NA MATRIZ*/
 
     /*Forma para adicionar no final da matriz*/
-    Seta(@NOME_VARIAVEL(FIM), 1);  /*Atribuindo um valor no vetor X;*/
-    Seta(@NOME_VARIAVEL(FIM, FIM), 2);  /*Atribuindo um valor no vetor Y;*/
-    Seta(@NOME_VARIAVEL(FIM, FIM, FIM), 3);  /*Atribuindo um valor no vetor Z;*/
+    SETA(@NOME_VARIAVEL(FIM), 1);              /*Atribuindo um valor no vetor X;*/
+    SETA(@NOME_VARIAVEL(FIM, FIM), 2);         /*Atribuindo um valor no vetor Y;*/
+    SETA(@NOME_VARIAVEL(FIM, FIM, FIM), 3);    /*Atribuindo um valor no vetor Z;*/
 
-    /*Forma para adicionar em um index especifico*/
-    Seta(@NOME_VARIAVEL(1), 3);  /*Atribuindo um valor no indice em X;*/
-    Seta(@NOME_VARIAVEL(1,1), 3);  /*Atribuindo um valor no indice em Y;*/
-    Seta(@NOME_VARIAVEL(1,1,1), 3);  /*Atribuindo um valor no indice em Z;*/
+    /*Forma para adicionar em um index específico*/
+    SETA(@NOME_VARIAVEL(1), 3);                /*Atribuindo um valor no indice em X*/
+    SETA(@NOME_VARIAVEL(1,1), 3);              /*Atribuindo um valor no indice em Y*/
+    SETA(@NOME_VARIAVEL(1,1,1), 3);            /*Atribuindo um valor no indice em Z*/
 
 <COMANDO> 
 ```
 
 ## **Loop:**
 
-**Loop** é uma estrutura de programação que repete uma sequência de instruções até que uma condição específica seja atendida. Os programadores usam loops para alternar entre valores, adicionar somas de números, repetir funções, e muitas outras coisas.
-
+**Loop** é uma estrutura de programação que repete uma sequência de instruções até que uma condição específica seja atendida. Os programadores usam loops para alternar entre valores, adicionar somas de números, repetir funções, e diversas outras funcionalidades.
 
 ### ==ParaCada( )==
 
 **Descrição:**
 
-Um loop for simplifica o código fonte. A instrução de loop ***ParaCada*** define o ponto inicial e final, bem como o incremento para cada iteração. Começando do inicio da matriz para o final e utilizando para valores númericos.
+Um loop parecido com o *FOR*. A instrução de loop ***ParaCada*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do inicio da matriz para o final, utilizamos essa função para **NÚMEROS**.
 
 
 **Parâmetros:**
 
-1. *NOME_QUALQUER:* É um nome qualquer que será relacionado aos itens da matriz. 
-2. *MATRIX* 
+1. **NOME_QUALQUER:** É um nome qualquer que será relacionado aos itens da matriz. 
+2. **MATRIX** 
 
 **Sintaxe:**
 
@@ -425,13 +422,23 @@ Exemplo 01:
         SE(
             dados 2 =
         ENTAO
-            Seta(#Valor_valido, dados)
+            SETA(#VALOR_VALIDO, dados)
         SENAO
-            Seta(#Valor_in, dados)
+            SETA(#VALOR_INVALIDO, 1)
         )
-    )
-<COMANDO
+    );
 
+    ParaCada(laranja EM #NOME_VARIAVEL FACA
+        SE(
+            laranja 3 =
+        ENTAO
+            SETA(#VALOR_VALIDO, laranja)
+        SENAO
+            Seta(#VALOR_INVALIDO, 1)
+        )
+    );
+
+<COMANDO
 ```
 
 ```{.py3 hl_lines="" linenums="60" title="ParaCada( )"}
@@ -441,8 +448,9 @@ Exemplo 02:
 <COMANDO>
         
     ParaCada(dados EM Range(1, 10) FACA
-        Seta(#VALORES(FIM), dados)
-    )
+        SETA(#VALORES(FIM), dados)
+    );
+
 <COMANDO
 
 ```
@@ -450,7 +458,7 @@ Exemplo 02:
 
 **Descrição:**
 
-A função range() permite-nos especificar o início da sequência, o passo, e o valor final. O único parâmetro obrigatório é o que define quem será o último elemento da sequência.
+A função range() permite especificar o início de uma sequência e o final. Uma das suas funcionalidades é atribuir valores sequenciais em matrizes
 
 **Parâmetros:**
 
@@ -468,22 +476,27 @@ Exemplo 01:
     Seta(#NOME_VARIAVEL(FIM), Minima()); 
 
     PARACADA(j EM Range(1, 10) FACA
-                        SE(
-                            E(minima() #NOME_VARIAVEL(j) <= , #atingiuSNP(j), #atingiuSNP(j))
-                        ENTAO 
-                            SETA(#movimentosP(j, j), 1);
-                        )
+        SE(
+            E(
+                minima() #NOME_VARIAVEL(j) <= 
+            , 
+                #atingiuSNP(j)
+            , 
+                #atingiuSNP(j)
+            )
+        ENTAO 
+            SETA(#movimentosP(j, j), 1);
         )
-    )
+    );
+    
 <COMANDO
 
 ```
-
 ### ==ParaCadaINV( )==
 
 **Descrição:**
 
-Um loop for simplifica o código fonte. A instrução de loop ***ParaCadaINV*** define o ponto inicial e final, bem como o incremento para cada iteração. Começando do final da matriz para o inicio e utilizando para valores númericos.
+Um loop parecido com o *FOR*. A instrução de loop ***ParaCadaINV*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do final da matriz para o inicio, utilizamos essa função para **NÚMEROS**.
 
 
 **Parâmetros:**
@@ -493,20 +506,18 @@ Um loop for simplifica o código fonte. A instrução de loop ***ParaCadaINV*** 
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ParaCada( )"}
+```{.py3 hl_lines="" linenums="60" title="ParaCadaINV( )"}
 
 Exemplo 01:
 
 <COMANDO>
         
-    Seta(#NOME_VARIAVEL(FIM), 1); 
-    Seta(#NOME_VARIAVEL(FIM), 2);
-    Seta(#NOME_VARIAVEL(FIM), 3);
+    SETA(#NOME_VARIAVEL(FIM), 1); 
+    SETA(#NOME_VARIAVEL(FIM), 2);
+    SETA(#NOME_VARIAVEL(FIM), 3);
 
 
-    ParaCada(
-        dados EM #NOME_VARIAVEL
-    ,
+    ParaCadaINV(dados EM #NOME_VARIAVEL FACA
         SE(
             dados 2 =
         ENTAO
@@ -514,22 +525,20 @@ Exemplo 01:
         SENAO
             Seta(#Valor_in, dados)
         )
-    )
+    );
 <COMANDO
 
 ```
-
-```{.py3 hl_lines="" linenums="60" title="ParaCada( )"}
+```{.py3 hl_lines="" linenums="60" title="ParaCadaINV( )"}
 
 Exemplo 02:
 
 <COMANDO>
         
-    ParaCada(
-        dados EM Range(10)
-    ,
-        Seta(#VALORES(FIM), dados)
-    )
+    ParaCadaINV( dados EM Range(10) FACA
+        SETA(#VALORES(FIM), dados)
+    );
+
 <COMANDO
 
 ```
@@ -538,8 +547,7 @@ Exemplo 02:
 
 **Descrição:**
 
-Um loop for simplifica o código fonte. A instrução de loop ***ParaCadaTEXTO*** define o ponto inicial e final, bem como o incremento para cada iteração. Começando do inicio da matriz para o fim e utilizando para STRING.
-
+Um loop parecido com o *FOR*.  A instrução de loop ***ParaCadaTEXTO*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do inicio da matriz para o final, utilizamos essa função para **TEXTOS**.
 
 **Parâmetros:**
 
@@ -554,22 +562,21 @@ Exemplo 01:
 
 <COMANDO>
         
-    Seta(@NOME_VARIAVEL(FIM), 'Valido'); 
-    Seta(@NOME_VARIAVEL(FIM), 'Valido');
-    Seta(@NOME_VARIAVEL(FIM), 'Invalido');
+    SETA(@NOME_VARIAVEL(FIM), 'Válido'); 
+    SETA(@NOME_VARIAVEL(FIM), 'Válido');
+    SETA(@NOME_VARIAVEL(FIM), 'InVálido');
 
 
-    ParaCadaTEXTO(
-        analise EM @NOME_VARIAVEL
-    ,
+    ParaCadaTEXTO(analise EM @NOME_VARIAVEL FACA
         SE(
-            analise 'Valido' =
+            analise 'Válido' =
         ENTAO
-            Seta(#Valor_valido, 1)
+            SETA(#Valor_valido, 1)
         SENAO
-            Seta(#Valor_in, 1)
+            SETA(#Valor_in, 1)
         )
-    )
+    );
+
 <COMANDO
 
 ```
@@ -578,8 +585,7 @@ Exemplo 01:
 
 **Descrição:**
 
-Um loop for simplifica o código fonte. A instrução de loop ***ParaCadaTEXTO*** define o ponto inicial e final, bem como o incremento para cada iteração. Começando do fim da matriz para o inicio e utilizando para STRING.
-
+Um loop parecido com o *FOR*.  A instrução de loop ***ParaCadaTEXTO*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do final da matriz para o inicio, utilizamos essa função para **TEXTOS**.
 
 **Parâmetros:**
 
@@ -588,39 +594,36 @@ Um loop for simplifica o código fonte. A instrução de loop ***ParaCadaTEXTO**
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ParaCadaTEXTO( )"}
+```{.py3 hl_lines="" linenums="60" title="ParaCadaTEXTOInv( )"}
 
 Exemplo 01:
 
 <COMANDO>
         
-    Seta(@NOME_VARIAVEL(FIM), 'Valido'); 
-    Seta(@NOME_VARIAVEL(FIM), 'Valido');
-    Seta(@NOME_VARIAVEL(FIM), 'Invalido');
+    SETA(@NOME_VARIAVEL(FIM), 'valído'); 
+    SETA(@NOME_VARIAVEL(FIM), 'valído');
+    SETA(@NOME_VARIAVEL(FIM), 'valído');
 
 
-    ParaCadaTEXTO(
-        analise EM @NOME_VARIAVEL
-    ,
+    ParaCadaTEXTOInv(analise EM @NOME_VARIAVEL FACA
         SE(
-            analise 'Valido' =
+            analise 'valído' =
         ENTAO
-            Seta(#Valor_valido, 1)
+            SETA(#Valor_valido, 1)
         SENAO
-            Seta(#Valor_in, 1)
+            SETA(#Valor_in, 1)
         )
-    )
+    );
+
 <COMANDO
 
 ```
-
 ## **Escrever observações:**
-
 ### ==Loga( )==
 
 **Descrição:**
 
-Sua função é exibir mensagens para o arquivo **(LogaDados.csv)** localizado no diretório do Debug. Podemos definir que esta função é a mesma utilizada no print da linguagem python. Ela permite até *dez parâmetros* que serão adicionado cada loga em uma linha. Podemos colocar valores, strings, expressões ou variaveis dentro da função. 
+Sua função é exibir mensagens para o arquivo **(LogaDados.csv)** localizado no diretório do Debug. Podemos definir que essa função é a mesma utilizada no *PRINT* da linguagem python. Ela permite até *dez parâmetros*.Cada loga em uma linha no arquivo. Podemos colocar valores, strings, expressões ou variaveis dentro dessa função. 
 
 **Nota:** ==Usamos essa função nas tags: COMANDOINICIO, COMANDO E COMANDOFIM;==
 
@@ -641,21 +644,21 @@ Sua função é exibir mensagens para o arquivo **(LogaDados.csv)** localizado n
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="Loga( )"}
+
 <COMANDO>
         
-    Loga("1", "2", "3", "4", "5", "6", "7", "'8'", "9", "10");
-    Loga(#gatilho, 'ACIONOU');
+    Loga('1', '2', '3', '4', '5', '6', '7', '8', '9', '10');
+    Loga(#GATILHO, 'ACIONOU');
 	Loga(@teste, 2023, '----->', #AVALIA);
 	Loga(@test, 'Realizou o teste');
 
 <COMANDO> 
 ```
-
 ### ==Preloga( )==
 
 **Descrição:**
 
-Sua função é mandar mensagens para o arquivo **(LogaDados.csv)** localizado no diretório do Debug parecida com a Função *Loga()*, porém ao invés de adicionar uma nova linha a cada *Preloga()*, ele irá adicionar todos os dados na mesma linha, é uma vantagem quando precisamos colocar mais de dez parâmetros em uma mesma linha.
+Sua função é mandar mensagens para o arquivo **(LogaDados.csv)** localizado no diretório do Debug parecida com a Função *Loga()*, porém ao invés de adicionar uma nova linha a cada *loga()*, ele irá adicionar todos os dados na mesma linha, é uma vantagem quando precisamos colocar mais de dez parâmetros em uma mesma linha.
 
 **Nota:** ==Usamos essa função nas tags: COMANDOINICIO, COMANDO E COMANDOFIM;==
 
@@ -675,19 +678,23 @@ Sua função é mandar mensagens para o arquivo **(LogaDados.csv)** localizado n
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="Preloga( )"}
+
 <COMANDO>
         
-    Preloga("1", "2", "3", "4", "5", "6", "7", "'8'", "9", "10");
-    Preloga(#gatilho, 'ACIONOU', 2000);
+    Preloga('1', '2', '3', '4', '5', '6', '7', '8', '9', '10');
+    loga(#GATILHO, 'ACIONOU', 2000);
 
 <COMANDO> 
+
 ```
 
 ### ==LogaEstatisticas( )==
 
 **Descrição:**
 
-Utilizado para fazer estudo completo referente a variavel **@EST_** + **<*nome_variavel*>**. Utilizamos junto com o **LogaEstatisticas( )** a função **AdiconaValor( )**. Estudos realizados pela função:
+Utilizado para fazer estudos completos referente a variavel **@EST_** + **<*nome_variavel*>**. Utilizamos junto com o **LogaEstatisticas( )** a função **AdiconaValor( )**. 
+
+Estudos realizados pela função:
 
 |**DADOS ESTATÍSTICOS ANALISADOS**| 
 |                                 |
@@ -709,6 +716,7 @@ Utilizado para fazer estudo completo referente a variavel **@EST_** + **<*nome_v
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="LogaEstatisticas( )"}
+
 <COMANDO>
         
     AdicionaValor(@est_a, Random());
@@ -731,8 +739,7 @@ Utilizado para fazer estudo completo referente a variavel **@EST_** + **<*nome_v
 
 **Descrição:**
 
-Podemos utilizar esta função para analisar os valores que estão em todas as variaveis, será criado um arquivo no diretório do Debug para obter as informações.
-
+Podemos utilizar esta função para analisar os valores que estão em todas as variáveis, será criado um arquivo no diretório do Debug para obter as informações.
 
 **Parâmetros:**
 
@@ -741,18 +748,19 @@ Podemos utilizar esta função para analisar os valores que estão em todas as v
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="LogaVariaveis( )"}
+
 <COMANDOFIM>
         
     LogaVariaveis("Analise_dados.csv");
 
 <COMANDOFIM> 
+
 ```
 ### ==LogaVariaveisAlteradas( )==
 
 **Descrição:**
 
 Podemos utilizar esta função para analisar todas as variaveis que foram alteradas, será criado um arquivo no diretório do Debug para obter as informações.
-
 
 **Parâmetros:**
 
@@ -763,20 +771,19 @@ Podemos utilizar esta função para analisar todas as variaveis que foram altera
 ```{.py3 hl_lines="" linenums="60" title="LogaVariaveisAlteradas( )"}
 <COMANDOFIM>
         
-    LogaVariaveisAlteradas("Analise_dados.csv");
+    LogaVariaveisAlteradas("Analise_dados_alterados.csv");
 
 <COMANDOFIM> 
 ```
-
 ### ==BreakPoint( )==
 
 **Descrição:**
 
-Ela é responsável por analisar processos e debugar, o resultado será colocado no arquivo **BreakPoints.txt** no diretório Debug.
+Ela é responsável por analisar processos, o resultado será colocado no arquivo **BreakPoints.txt** no diretório Debug.
 
 **Parâmetros:**
 
-1.  **Expressão -** É a expressão que precisa ser analisada.
+1.  **EXPRESSÃO -** É a expressão que precisa ser analisada.
 
 **Sintaxe:**
 
@@ -795,14 +802,12 @@ Ela é responsável por analisar processos e debugar, o resultado será colocado
             SETA(#numero_candle, 0);
 
         )		
-    )
+    );
 
 </COMANDO>
+
 ```
-
-
 ## **Candlesticks:**
-
 ### ==Abertura( )==
 
 **Descrição:**
@@ -811,8 +816,8 @@ Referente a **ABERTURA** do Candle. Podendo ser utilizada sem parâmetros que re
 
 **Parâmetros:**
 
-1.  **TipoPosição -** **A:** Posição do ativo, **D:** Dinheiro da posição, **O:** Posição de outro ativo.
-2.  **Periodo -** 0= Candle Atual, 1= Candle Anterior, etc...
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERPERÍODOIODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
 
 **Sintaxe:**
 
@@ -822,7 +827,7 @@ Referente a **ABERTURA** do Candle. Podendo ser utilizada sem parâmetros que re
 					
     Abertura( )   /*Abertura do candle atual*/
     Abertura(,1)  /*Abertura do candle anterior*/
-    abertura(,5)  /*Abertura do quinto candle anterior*/
+    Abertura(,5)  /*Abertura do quinto candle anterior*/
 
 </COMANDO>
 ```
@@ -830,12 +835,12 @@ Referente a **ABERTURA** do Candle. Podendo ser utilizada sem parâmetros que re
 
 **Descrição:**
 
-Referente a **FECHAMENTO** do Candle. Podendo ser utilizada sem parâmetros que retornara a abertura do candle atual, ou poderar utilizá-la com dois parâmetros.
+Referente a **FECHAMENTO** do Candle. Podendo ser utilizada sem parâmetros que retornara a fechamento do candle atual, ou poderar utilizá-la com dois parâmetros.
 
 **Parâmetros:**
 
-1.  **TipoPosição -** **A:** Posição do ativo, **D:** Dinheiro da posição, **O:** Posição de outro ativo.
-2.  **Periodo -** 0= Candle Atual, 1= Candle Anterior, etc...
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
 
 **Sintaxe:**
 
@@ -853,12 +858,12 @@ Referente a **FECHAMENTO** do Candle. Podendo ser utilizada sem parâmetros que 
 
 **Descrição:**
 
-Referente a **MAXIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a abertura do candle atual, ou poderar utilizá-la com dois parâmetros.
+Referente a **MAXIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a maxima do candle atual, ou poderar utilizá-la com dois parâmetros.
 
 **Parâmetros:**
 
-1.  **TipoPosição -** **A:** Posição do ativo, **D:** Dinheiro da posição, **O:** Posição de outro ativo.
-2.  **Periodo -** 0= Candle Atual, 1= Candle Anterior, etc...
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
 
 **Sintaxe:**
 
@@ -879,12 +884,12 @@ Referente a **MAXIMA** do Candle. Podendo ser utilizada sem parâmetros que reto
 
 **Descrição:**
 
-Referente a **MINIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a abertura do candle atual, ou poderar utilizá-la com dois parâmetros.
+Referente a **MINIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a minima do candle atual, ou poderar utilizá-la com dois parâmetros.
 
 **Parâmetros:**
 
-1.  **TipoPosição -** **A:** Posição do ativo, **D:** Dinheiro da posição, **O:** Posição de outro ativo.
-2.  **Periodo -** 0= Candle Atual, 1= Candle Anterior, etc...
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
 
 **Sintaxe:**
 
@@ -907,8 +912,8 @@ Esta função utilizamos para localizar os candles anteriores.
 
 **Parâmetros:**
 
-1.  **Atraso -** Quantos candles anteriores
-2.  **Expressão -**  Informação dessejado.
+1.  **ATRASO:** Quantos candles posteriores.
+2.  **EXPRESSÃO:**  Informação dessejado.
 
 **Sintaxe:**
 
@@ -916,12 +921,11 @@ Esta função utilizamos para localizar os candles anteriores.
 
 <COMANDO>
 					
-    Anterior(1, fechamento())   /*fechamento do candle anterior*/
-    Anterior(2, VOLUME())   /*Volume do segundo candle anterior*/
+    Anterior(1, Fechamento())   /*Fechamento do candle anterior*/
+    Anterior(2, VOLUME())       /*Volume do segundo candle anterior*/
 
 </COMANDO>
 ```
-
 ### ==Proximo( )==
 
 **Descrição:**
@@ -930,8 +934,8 @@ Referente a candles posteriores. Utilizado apenas para estatística.
 
 **Parâmetros:**
 
-1.  **Posterior -** Quantos candles posteriores.
-2.  **Expressão -**  Informação dessejado.
+1.  **POSTERIOR:** Quantos candles posteriores.
+2.  **EXPRESSÃO:**  Informação dessejado.
 
 **Sintaxe:**
 
@@ -939,36 +943,35 @@ Referente a candles posteriores. Utilizado apenas para estatística.
 
 <COMANDO>
 					
-    Proximo(1, fechamento())   /*fechamento do candle posterior*/
-    Proximo(2, VOLUME())   /*Volume do segundo candle posterior*/
+    Proximo(1, Fechamento())   /*Fechamento do candle posterior*/
+    Proximo(2, VOLUME())       /*Volume do segundo candle posterior*/
 
 </COMANDO>
-```
 
-### ==CandleFechaPeriodo( )==
+```
+### ==CandleFechaPeríodo( )==
 
 **Descrição:**
 
-Retorna se o fechamento do perido atual é o mesmo do fechamento do parâmetro. Vai retornar 0 se for diferendo do fechamento do tempo gráfico ou vai retornar 1 se for o fechamento for igual ao parâmetro informado.
+Retorna se o fechamento do período atual é o mesmo do fechamento do parâmetro. Vai retornar 0 se for diferente do fechamento do tempo gráfico ou vai retornar 1 se for o fechamento for igual ao parâmetro informado.
 
 **Parâmetros:**
 
-1.  **tempo -** Perido gráfico
+1.  **TEMPO:** Perido gráfico.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="CandleFechaPeriodo( )"}
+```{.py3 hl_lines="" linenums="60" title="CandleFechaPeríodo( )"}
 
 <COMANDO>
 
     SE(
-        CandleFechaPeriodo(10) /*Perguntando se o fechamento atual também é o fechamento do candle de 10 minutos.*/
+        CandleFechaPeríodo(10)      /*Perguntando se o fechamento atual também é o fechamento do candle de 10 minutos.*/
     ENTAO
         CorCandle(Laranja);
     SENAO
     )        			
-    CandleFechaPeriodo() 
-
+     
 </COMANDO>
 ```
 ## **Cores Candles:**
@@ -1022,10 +1025,9 @@ Exemplos:
 |Vermelho Escuro   |CorCandle(VermelhoEscuro) |
 |Violeta		   |CorCandle(Violeta)        |
 
-
 ## **Condicionais e recursividade:**
 
-O tópico principal deste capítulo é a funsão **SE( )**, que executa códigos diferentes depenendo do estado do programa. Mas primeiro quero apresentar as expressões booleana.
+O tópico principal deste capítulo é a função **SE( )**, que executa códigos diferentes depenendo do estado do programa. Mas primeiro quero apresentar as expressões booleana.
 
 ### **Expressões booleana**
 
@@ -1036,7 +1038,7 @@ Uma **expressão booleana** é uma expressão que pode ser verdadeira ou falsa. 
 <COMANDO>
 					
     Se( 
-        5 4 =   /*Se essa condição for verdadeira*/
+        5 4 =    /*Se essa condição for verdadeira*/
     ENTAO
         Loga('Verdadeiro');   /*Então mostrará verdadeiro*/
     SENAO
@@ -1044,6 +1046,7 @@ Uma **expressão booleana** é uma expressão que pode ser verdadeira ou falsa. 
     )
 
 </COMANDO>
+
 ```
 
 O operador = é um dos **operadores relacionais**, os outros são:
@@ -1058,16 +1061,15 @@ O operador = é um dos **operadores relacionais**, os outros são:
     X Y <=  /*X é menor ou igual que Y*/
 
 ```
-
 ### ==SE( )==
 
 **Descrição:**
 
-É a base das condicionais, onde o objetivo da função é analisar uma expressão e determinar se ela é verdadeiro ou falsa, dependendo da resposta ela direcionará para dois caminhos, se for verdadeiro, irá para o caminho do ***ENTAO***, se for falsa irá para o caminho do ***SENAO**(*OPICIONAL*).
+É a base das condicionais, onde o objetivo da função é analisar uma expressão e determinar se ela é verdadeira ou falsa, dependendo da resposta ela direcionará para dois caminhos, se for verdadeira, irá para o caminho do ***ENTAO***, se for falsa irá para o caminho do ***SENAO**(*OPICIONAL*).
 
 **Parâmetros:**
 
-1.  **Expressão -** Uma condição que deverá ser analisada.
+1.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
 
 **Sintaxe:**
 
@@ -1093,11 +1095,11 @@ O operador = é um dos **operadores relacionais**, os outros são:
 
 **Parâmetros:**
 
-1.  **Expresssão -** Uma condição que deverá ser analisada.
-2.  **Expresssão -** Uma condição que deverá ser analisada.
-3.  **Expresssão -** Uma condição que deverá ser analisada.
-4.  **Expresssão -** Uma condição que deverá ser analisada.
-5.  **Expresssão -** Uma condição que deverá ser analisada.
+1.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+2.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+3.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+4.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+5.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
 
 **Sintaxe:**
 
@@ -1137,23 +1139,21 @@ Exemplo 02:
         )
             
     ENTAO
-        CorCandle(Preto);
+        CorCandle(Rosa);
     SENAO          
     )
 
 </COMANDO>
 ```
-
 ### ==NAO( )==
 
 **Descrição:**
 
 É utilizado dentro da função **SE( )**, Utilizado para retornar verdadeiro quando o parâmetro for falso e verdadeiro quando for falso.
 
-
 **Parâmetros:**
 
-1.  **Expressão -** Uma condição que deverá ser analisada.
+1. **EXPRESSÃO:** Uma condição que deverá ser analisada.
 
 **Sintaxe:**
 
@@ -1171,10 +1171,9 @@ Exemplo 02:
     )
 
 </COMANDO>
+
 ```
-
 ## **Indicadores:**
-
 ### ==ADX( )==
 
 **Descrição:**
@@ -1183,7 +1182,7 @@ A função **ADX** retorna o valor do indicador **ADX**, de acordo com os perío
 
 **Parâmetros:**
 
-1.  **Periodo -** Período utilizado no momento do cálculo do indicador.
+1.  **PERÍODO:** Período utilizado no momento do cálculo do indicador.
 
 **Sintaxe:**
 
@@ -1195,7 +1194,6 @@ A função **ADX** retorna o valor do indicador **ADX**, de acordo com os perío
 
 </COMANDO>
 ```
-
 ### ==ATR( )==
 
 **Descrição:**
@@ -1204,7 +1202,7 @@ A função **StopATR** retorna o valor do indicador **Stop ATR**, de acordo com 
 
 **Parâmetros:**
 
-1.  **Periodo -** Período utilizado no momento do cálculo do indicador.
+1.  **PERÍODO:** Período utilizado no momento do cálculo do indicador.
 
 **Sintaxe:**
 
@@ -1221,14 +1219,14 @@ A função **StopATR** retorna o valor do indicador **Stop ATR**, de acordo com 
 
 **Descrição:**
 
-A função BollingerBands retorna o valor do indicador Bandas de Bollinger , de acordo com o período e tipo
+A função BollingerBands retorna o valor do indicador Bandas de Bollinger, de acordo com o período e tipo
 de média desejados.
 
 **Parâmetros:**
 
-1.  **Periodo -** Período utilizado na média.
-2.  **Superior ou Inferior -** **0 =** Inferior e **1 =** Superior
-3.  **Desvio -** Número do desvio.
+1.  **PERÍODO:** Período que será a média.
+2.  **BANDAS** **0 =** Inferior e **1 =** Superior
+3.  **DESVIO -** Número do desvio.
 
 **Sintaxe:**
 
@@ -1240,8 +1238,8 @@ de média desejados.
     Grafico(Bollinger(20, 1, 2));
 
 </COMANDO>
-```
 
+```
 ### ==Hilo( )==
 
 **Descrição:**
@@ -1250,7 +1248,7 @@ A função **HILO** retorna o valor do indicador **HILO**, de acordo com o perí
 
 **Parâmetros:**
 
-1.  **Periodo -** Período utilizado na média.
+1.   **PERÍODO** Período utilizado na média.
 
 **Sintaxe:**
 
@@ -1261,6 +1259,7 @@ A função **HILO** retorna o valor do indicador **HILO**, de acordo com o perí
     Desenha(Hilo(6));
 
 </COMANDO>
+
 ```
 
 ### ==MACD( )==
@@ -1272,10 +1271,9 @@ desejados.
 
 **Parâmetros:**
 
-1.  **MediaLonga -** Determina o período da Média Longa para formação do cálculo.
-2.  **MediaCurta -**  Determina o período da Média Longa para formação do cálculo.
-3.  **Periodo -** Período utilizado na média.
-
+1.  **MEDIA_LONGA:** Determina o período da Média Longa para formação do cálculo.
+2.  **MEDIA_CURTA:**  Determina o período da Média curta para formação do cálculo.
+3.  **PERÍODO:** Período que será a média.
 
 **Sintaxe:**
 
@@ -1286,21 +1284,20 @@ desejados.
     Grafico(MACD(20, 12, 3));
     
 </COMANDO>
-```
 
+```
 ### ==MACDH( )==
 
 **Descrição:**
 
-A função **MACDH** retorna o valor do indicador MACD Histograma , de acordo com os períodos
+A função **MACDH** retorna o valor do indicador MACD Histograma, de acordo com os períodos
 desejados.
-
 
 **Parâmetros:**
 
-1.  **MediaLonga -** Determina o período da Média Longa para formação do cálculo.
-2.  **MediaCurta -**  Determina o período da Média Longa para formação do cálculo.
-3.  **Periodo -** Período utilizado na média.
+1.  **MEDIA_LONGA:** Determina o período da Média Longa para formação do cálculo.
+2.  **MEDIA_CURTA:**  Determina o período da Média curta para formação do cálculo.
+3.  **PERÍODO:** Período que será a média.
 
 
 **Sintaxe:**
@@ -1312,19 +1309,17 @@ desejados.
     Grafico(MACDH(20, 12, 3));
     
 </COMANDO>
-```
 
+```
 ### ==Media( )==
 
 **Descrição:**
 
-A função **MACDH** retorna o valor do indicador MACD Histograma , de acordo com os períodos
-desejados.
-
+Utilizado para calcular as médias.
 
 **Parâmetros:**
 
-1.  **Media -** Determina o período da Média Longa para formação do cálculo.
+1.  **MEDIA:** Determina o período da Média Longa para formação do cálculo.
  
 |Medias               |
 |                     |
@@ -1332,9 +1327,8 @@ desejados.
 |W = Welles Wilder    |     
 |E = Exponencial      |     
 
-2.  **Expressão -**  Expressão que será calculado a média.
-3.  **Periodo -** Periodo que será a média
-
+2.  **EXPRESSÃO:**  Expressão que será calculado a média.
+3.  **PERÍODO:** Período que será a média.
 
 **Sintaxe:**
 
@@ -1346,18 +1340,16 @@ desejados.
     
 </COMANDO>
 ```
-
-
 ### ==MMA( )==
 
 **Descrição:**
 
-A função Media retorna o valor do indicador Média Móvel, tipo aritmética
+A função Média retorna o valor do indicador Média Móvel, tipo aritmética.
 
 **Parâmetros:**
 
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
-2.  **TipoSerie -**  Série que será considerada para o cálculo.
+1.  **PERÍODO:** Período que será a média.
+2.  **TIPO_SERIE:**  Série que será considerada para o cálculo.
 
 **Sintaxe:**
 
@@ -1368,18 +1360,19 @@ A função Media retorna o valor do indicador Média Móvel, tipo aritmética
     Desenha(MMA(200, Volume()));
     
 </COMANDO>
+
 ```
 
 ### ==MME( )==
 
 **Descrição:**
 
-A função Media retorna o valor do indicador Média Móvel, tipo exponencial
+A função Média retorna o valor do indicador Média Móvel, tipo exponencial.
 
 **Parâmetros:**
 
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
-2.  **TipoSerie -**  Série que será considerada para o cálculo.
+1.  **PERÍODO:** Período que será a média.
+2.  **TIPO_SERIE:**  Série que será considerada para o cálculo.
 
 **Sintaxe:**
 
@@ -1390,18 +1383,18 @@ A função Media retorna o valor do indicador Média Móvel, tipo exponencial
     Desenha(MME(200, Volume()));
     
 </COMANDO>
-```
 
+```
 ### ==MMW( )==
 
 **Descrição:**
 
-A função Media retorna o valor do indicador Média Móvel, welles wilder
+A função Média retorna o valor do indicador Média Móvel, welles wilder.
 
 **Parâmetros:**
 
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
-2.  **TipoSerie -**  Série que será considerada para o cálculo.
+1.  **PERÍODO:** Período que será a média.
+2.  **TIPO_SERIE:**  Série que será considerada para o cálculo.
 
 **Sintaxe:**
 
@@ -1412,14 +1405,13 @@ A função Media retorna o valor do indicador Média Móvel, welles wilder
     Desenha(MMW(200, Volume()));
     
 </COMANDO>
-```
 
+```
 ### ==OBV( )==
 
 **Descrição:**
 
 A função OBV retorna o valor do indicador OBV.
-
 
 **Sintaxe:**
 
@@ -1430,13 +1422,13 @@ A função OBV retorna o valor do indicador OBV.
     Desenha(OBV());
     
 </COMANDO>
+
 ```
 ### ==OBTR( )==
 
 **Descrição:**
 
-A função OnBalanceTR retorna o valor do indicador On-Balance True Range .
-
+A função OnBalanceTR retorna o valor do indicador On-Balance True Range.
 
 **Sintaxe:**
 
@@ -1447,18 +1439,18 @@ A função OnBalanceTR retorna o valor do indicador On-Balance True Range .
     Desenha(OBTR(150));
     
 </COMANDO>
-```
 
+```
 ### ==RSI( )==
 
 **Descrição:**
 
-A função **RSI** retorna o valor do indicador **IFR(RSI)** , de acordo com o período e tipo desejados.
+A função **RSI** retorna o valor do indicador **IFR(RSI)**, de acordo com o período e tipo desejados.
 
 **Parâmetros:**
 
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
-2.  **Periodo_media -**  Período utilizado no momento do cálculo do indicador.
+1.  **PERÍODO:**  Período utilizado no momento do cálculo do indicador.
+2.  **PERÍODO_MEDIA:**  Período utilizado no momento do cálculo do indicador.
 
 **Sintaxe:**
 
@@ -1469,17 +1461,17 @@ A função **RSI** retorna o valor do indicador **IFR(RSI)** , de acordo com o p
     Grafico(RSI(9,20));
     
 </COMANDO>
-```
 
+```
 ### ==Estocastico( )==
 
 **Descrição:**
 
-A função **SlowStochastic** retorna o valor do indicador **Estocástico Lento** , de acordo com o período
-desejado.
+A função **SlowStochastic** retorna o valor do indicador **Estocástico Lento**, de acordo com o período desejado.
+
 **Parâmetros:**
 
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
+1.  **PERÍODO:**  Período utilizado no momento do cálculo do indicador.
 
 **Sintaxe:**
 
@@ -1490,18 +1482,18 @@ desejado.
     Grafico(Estocastico(20));
     
 </COMANDO>
-```
 
+```
 ### ==CCI( )==
 
 **Descrição:**
 
- função CCI retorna o valor do indicador CCI, de acordo com o período desejado.
+Função CCI retorna o valor do indicador CCI, de acordo com o período desejado.
+
 **Parâmetros:**
 
-
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
-2.  **Periodo_media -**  Período utilizado no momento do cálculo do indicador.
+1.   **PERÍODO:**  Período utilizado no momento do cálculo do indicador.
+2.  **PERÍODO_MEDIA:**  Período utilizado no momento do cálculo do indicador.
 
 **Sintaxe:**
 
@@ -1512,8 +1504,8 @@ desejado.
     Grafico(CCI(50,20));
     
 </COMANDO>
-```
 
+```
 ### ==CCIC( )==
 
 **Descrição:**
@@ -1523,8 +1515,8 @@ Versão alternativa do CCI.
 
 **Parâmetros:**
 
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
-2.  **Periodo_media -**  Período utilizado no momento do cálculo do indicador.
+1.   **PERÍODO:**  Período utilizado no momento do cálculo do indicador.
+2.  **PERÍODO_MEDIA:**  Período utilizado no momento do cálculo do indicador.
 
 **Sintaxe:**
 
@@ -1535,8 +1527,8 @@ Versão alternativa do CCI.
     Grafico(CCIC(50,20));
     
 </COMANDO>
-```
 
+```
 ### ==CCIK( )==
 
 **Descrição:**
@@ -1546,8 +1538,8 @@ Versão alternativa do CCI.
 
 **Parâmetros:**
 
-1.  **Periodo -**  Período utilizado no momento do cálculo do indicador.
-2.  **Periodo_media -**  Período utilizado no momento do cálculo do indicador.
+1.   **PERÍODO:**  Período utilizado no momento do cálculo do indicador.
+2.  **PERÍODO_MEDIA:**  Período utilizado no momento do cálculo do indicador.
 
 **Sintaxe:**
 
@@ -1558,19 +1550,18 @@ Versão alternativa do CCI.
     Grafico(CCIK(10,30));
     
 </COMANDO>
+
 ```
-
-
 ### ==MantemMaxima( )==
 
 **Descrição:**
 
-Analisa retornar a maxima de uma expressão.
+Analisa e retornar a maxima de uma expressão.
 
 **Parâmetros:**
 
-1.  **variavel -**  Nome da variavel que será criada
-2.  **Expressão -**  Expressão a ser analisada.
+1.  **NOVA_VARIAVEL:**  Nome da variavel que será criada
+2.  **EXPRESSÃO:**  Expressão a ser analisada.
 
 **Sintaxe:**
 
@@ -1582,8 +1573,6 @@ Analisa retornar a maxima de uma expressão.
     
 </COMANDO>
 ```
-
-
 ### ==MantemMinima( )==
 
 **Descrição:**
@@ -1592,8 +1581,8 @@ Analisa retornar a minima de uma expressão.
 
 **Parâmetros:**
 
-1.  **variavel -**  Nome da variavel que será criada
-2.  **Expressão -**  Expressão a ser analisada.
+1.  **NOVA_VARIAVEL:**  Nome da variavel que será criada
+2.  **EXPRESSÃO:**  Expressão a ser analisada.
 
 **Sintaxe:**
 
@@ -1601,29 +1590,28 @@ Analisa retornar a minima de uma expressão.
 
 <COMANDO>
 					
-    MantemMaxima(#Maxima_20, Maxima(,50));
+    MantemMinima(#Minima_20, Minima(,50));
     
 </COMANDO>
+
 ```
-
-
 ### ==Volume( )==
 
 **Descrição:**
 
-Calculo o volume financeiro negociono no periodo desejado.
+Calcula o volume financeiro negociado no período desejado.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="MantemMaxima( )"}
+```{.py3 hl_lines="" linenums="60" title="Volume( )"}
 
 <COMANDO>
 					
     Anterior(1, Volume());
     
 </COMANDO>
-```
 
+```
 ## **Cruzamento:**
 ### ==CruzaBaixo( )==
 
@@ -1631,18 +1619,17 @@ Calculo o volume financeiro negociono no periodo desejado.
 
 É utilizado quando necessita verificar se um PONTO A(**preço**) cruza para **BAIXO** o PONTO B(**preço**)
 
-
 **Parâmetros:**
 
-1.  **Preço 01 -**  Preço anterior.
-2.  **Preço 02 -**  Preço atual.
+1.  **PREÇO 01:**  Preço anterior.
+2.  **PREÇO 02:**  Preço atual.
 
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="CruzaBaixo( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         CruzaBaixo(MMA(50), MMA(25));
@@ -1651,10 +1638,9 @@ Calculo o volume financeiro negociono no periodo desejado.
     SENAO
     )
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
-
 ### ==CruzaCima( )==
 
 **Descrição:**
@@ -1663,15 +1649,14 @@ Calculo o volume financeiro negociono no periodo desejado.
 
 **Parâmetros:**
 
-1.  **Preço 01 -**  Preço anterior.
-2.  **Preço 02 -**  Preço atual.
-
+1.  **PREÇO 01:**  Preço anterior.
+2.  **PREÇO 02:**  Preço atual.
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="CruzaCima( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         CruzaCima(MMA(50), MMA(25));
@@ -1680,9 +1665,9 @@ Calculo o volume financeiro negociono no periodo desejado.
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==Cruza( )==
 
 **Descrição:**
@@ -1691,15 +1676,14 @@ Calculo o volume financeiro negociono no periodo desejado.
 
 **Parâmetros:**
 
-1.  **Preço 01 -**  Preço anterior.
-2.  **Preço 02 -**  Preço atual.
-
+1.  **PREÇO 01:**  Preço anterior.
+2.  **PREÇO 02:**  Preço atual.
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="Cruza( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         Cruza(MMA(50), Fechamento());
@@ -1708,32 +1692,31 @@ Calculo o volume financeiro negociono no periodo desejado.
     SENAO
     )
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
 
-
-## **Periodo de Estudo:**
+## **Período de Estudo:**
 ### ==Agora( )==
 
 **Descrição:**
 
-Utilizado para estudar um periodo especifico. Não é necessário preencher todos os parametros, se caso não necessite de um parameto, utiliza um espaço em branco.
+Utilizado para estudar um período específico. Não é necessário preencher todos os parâmetros, se caso não necessite de um parâmeto, utiliza um espaço em branco para ignorar.
 
 **Parâmetros:**
 
-1.  **ANO -**  
-2.  **MES -**  
-3.  **DIA -**  
-4.  **HORA -** 
-5.  **MINUTO -**
-6.  **SEGUNDO -**
-
+1.  **ANO**  
+2.  **MES**  
+3.  **DIA**  
+4.  **HORA** 
+5.  **MINUTO**
+6.  **SEGUNDO**
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="CruzaBaixo( )"}
+```{.py3 hl_lines="" linenums="60" title="Agora( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         Agora( , , 15, , , );
@@ -1742,24 +1725,24 @@ Utilizado para estudar um periodo especifico. Não é necessário preencher todo
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==Ano( )==
 
 **Descrição:**
 
-Utilizado para estudar um **ANO** especifico.
+Utilizado para estudar um **ANO** específico.
 
 **Parâmetros:**
 
-1.  **ANO -**  
+1.  **ANO**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="Ano( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         Ano(2020);
@@ -1768,24 +1751,24 @@ Utilizado para estudar um **ANO** especifico.
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==MES( )==
 
 **Descrição:**
 
-Utilizado para estudar um **MES** especifico.
+Utilizado para estudar um **MES** específico.
 
 **Parâmetros:**
 
-1.  **MES -**  
+1.  **MES**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="MES( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         MES(2);
@@ -1794,24 +1777,24 @@ Utilizado para estudar um **MES** especifico.
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==DIA( )==
 
 **Descrição:**
 
-Utilizado para estudar um **DIA** especifico.
+Utilizado para estudar um **DIA** específico.
 
 **Parâmetros:**
 
-1.  **DIA -**  
+1.  **DIA**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="DIA( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         DIA(20);
@@ -1820,24 +1803,24 @@ Utilizado para estudar um **DIA** especifico.
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==Hora( )==
 
 **Descrição:**
 
-Utilizado para estudar um **Hora** especifico.
+Utilizado para estudar um **Hora** específico.
 
 **Parâmetros:**
 
-1.  **Hora -**  
+1.  **HORA**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="Hora( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         Hora(9)
@@ -1846,25 +1829,24 @@ Utilizado para estudar um **Hora** especifico.
     SENAO
     )
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
-
 ### ==Minuto( )==
 
 **Descrição:**
 
-Utilizado para estudar um **Minuto** especifico.
+Utilizado para estudar um **Minuto** específico.
 
 **Parâmetros:**
 
-1.  **Minuto -**  
+1.  **MINUTO**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="Minuto( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         Minuto(50)
@@ -1873,25 +1855,24 @@ Utilizado para estudar um **Minuto** especifico.
     SENAO
     )
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
-
 ### ==Segundo( )==
 
 **Descrição:**
 
-Utilizado para estudar um **Segundo** especifico.
+Utilizado para estudar um **Segundo** específico.
 
 **Parâmetros:**
 
-1.  **Segundo -**  
+1.  **SEGUNDO**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="Segundo( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         Segundo(10)
@@ -1900,10 +1881,9 @@ Utilizado para estudar um **Segundo** especifico.
     SENAO
     )
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
-
 ### ==SegundosDia( )==
 
 **Descrição:**
@@ -1912,95 +1892,90 @@ Segundos a partir da meia noite.
 
 **Parâmetros:**
 
-1.  **Segundos -**  
+1.  **SEGUNDOS**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="SegundosDia( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
-        Segundo(1520)
+        SegundosDia(1520)
     ENTAO
         Loga('Segundos 1520');
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==TempoDesdeAbertura( )==
 
 **Descrição:**
 
 Segundos desde a abertura.
 
-
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="TempoDesdeAbertura( )"}
 
-<ComandoFim>
+<COMANDO>
 
-    Seta(#Tempo, TempoDesdeAbertura( ));
+    SETA(#TEMPO, TempoDesdeAbertura( ));
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
-
 ### ==TempoFimCandle( )==
 
 **Descrição:**
 
 Tempo do fechamento candle atual.
 
-
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="TempoFimCandle( )"}
 
-<ComandoFim>
+<COMANDO>
 
-    Seta(#Tempo_fecha, TempoFimCandle( ));
+    SETA(#TEMPO_FECHA, TempoFimCandle( ));
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
-
 ### ==TempoInicioCandle( )==
 
 **Descrição:**
 
 Tempo do inicio candle atual.
 
-
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="TempoInicioCandle( )"}
 
-<ComandoFim>
+<COMANDO>
 
-    Seta(#Tempo_abertura, TempoInicioCandle( ));
+    SETA(#TEMPO_ABERTURA, TempoInicioCandle( ));
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
 ### ==DiaDesde1970( )==
 
 **Descrição:**
 
-Utilizado para estudar um **DIA** especifico desde de 1970.
+Utilizado para estudar um **DIA** específico desde de 1970.
 
 **Parâmetros:**
 
-1.  **Dia**  
+1.  **DIA**  
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="DiaDesde1970( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         DiaDesde1970(10000)
@@ -2009,9 +1984,9 @@ Utilizado para estudar um **DIA** especifico desde de 1970.
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==DiaExercicioOpcoes( )==
 
 **Descrição:**
@@ -2022,7 +1997,7 @@ Verifica 0 se for dia normal ou retorna 1 se for dia de opções.
 
 ```{.py3 hl_lines="" linenums="60" title="DiaExercicioOpcoes( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         DiaExercicioOpcoes() 0 =
@@ -2031,9 +2006,9 @@ Verifica 0 se for dia normal ou retorna 1 se for dia de opções.
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==DiasParaExercicio( )==
 
 **Descrição:**
@@ -2044,13 +2019,13 @@ Verifica 0 se for dia opções ou retorna quantos dias faltam para as opções.
 
 ```{.py3 hl_lines="" linenums="60" title="DiasParaExercicio( )"}
 
-<ComandoFim>
+<COMANDO>
 
-    Seta(#Dias_para_opcoes, DiasParaExercicio())
+    SETA(#DIAS_PARA_OPCOES, DiasParaExercicio());
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
 
 ### ==DiaSemana( )==
 
@@ -2070,7 +2045,7 @@ Verifica é dia da semana.
 
 ```{.py3 hl_lines="" linenums="60" title="DiaSemana( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
         E(
@@ -2083,65 +2058,60 @@ Verifica é dia da semana.
     SENAO
     )
 
-</COMANDOFIM>
-```
+</COMANDO>
 
+```
 ### ==FimDia( )==
 
 **Descrição:**
 
-Verifica 0 se não for o ultimo candle ou retorna 1 se for o ultimo candle do dia.
+Verifica 0 se não for o último candle ou retorna 1 se for o último candle do dia.
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="FimDia( )"}
 
-<ComandoFim>
+<COMANDO>
 
     SE(
-        FimDia()
+        FimDia() 1 =
     ENTAO
         Loga('Fim Dia');
     SENAO
     )
 
-</COMANDOFIM>
+</COMANDO>
+
 ```
-
-
-
-
 ## **Reversão:**
-
 ### ==AdicionaPontoInteresse( )==
 
 **Descrição:**
 
-É utilizado para identificar pontos especificos para realizar reversões (Gradiente). Para utilizar 
-esse comando é colocado dentro do campo >**<*ComandoPontoInteresse*/>**
+É utilizado para identificar pontos específicos para realizar reversões (Gradiente). Para utilizar 
+esse função é necessário colocar dentro do campo **<*ComandoPontoInteresse*>**
 
 **Parâmetros:**
 
-1.  **PontodeInteresse -** Posição para a reversão.
+1.  **PONTO_DE_INTERESSE:** Posição para a reversão.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="Logaritmo( )"}
+```{.py3 hl_lines="" linenums="60" title="AdicionaPontoInteresse( )"}
 
 <ComandoPontoInteresse>
 					
     AdicionaPontoInteresse(#FimDiaANT 30 +)
 
 </ComandoPontoInteresse>
-```
 
+```
 ## **Posições:**
 ### ==Identificador( )==
 
 **Descrição:**
 
 Identifica o ID da posição.
-
 
 **Sintaxe:**
 
@@ -2161,14 +2131,13 @@ Identifica o ID da posição.
     )
         
 </COMANDO>
-```
 
+```
 ### ==SaldoEquity( )==
 
 **Descrição:**
 
-Identifica o ID da posição.
-
+Informa o valor em dinheiro disponível na conta.
 
 **Sintaxe:**
 
@@ -2183,13 +2152,13 @@ Identifica o ID da posição.
     )
 
 </COMANDO>
+
 ```
 ### ==SaldoPosicoes( )==
 
 **Descrição:**
 
-Quanto vale o valor das posições atuais.
-
+Retorna o valor das posições atuais.
 
 **Sintaxe:**
 
@@ -2213,16 +2182,14 @@ Quanto vale o valor das posições atuais.
     )
 
 </COMANDO>
+
 ```
-
-
 
 ### ==Lucro( )==
 
 **Descrição:**
 
 Retorna o valor do lucro total.
-
 
 **Sintaxe:**
 
@@ -2244,7 +2211,6 @@ Retorna o valor do lucro total.
 
 Retorna o lucro das posições em aberto.
 
-
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="LucroPosicoes( )"}
@@ -2252,7 +2218,7 @@ Retorna o lucro das posições em aberto.
 <COMANDO>
                 
         SE(
-            Identificador();
+            Identificador() 
         ENTAO
             Loga(LucroPosicoes());	
         )
@@ -2260,13 +2226,11 @@ Retorna o lucro das posições em aberto.
 </COMANDO>
 ```
 
-
 ### ==UltExecutado( )==
 
 **Descrição:**
 
-Utilizado para retornar o ultimo preço executado.
-
+Utilizado para retornar o último preço executado.
 
 **Sintaxe:**
 
@@ -2278,8 +2242,6 @@ Utilizado para retornar o ultimo preço executado.
 
 </COMANDO>
 ```
-
-
 ### ==PosicaoInicial( )==
 
 **Descrição:**
@@ -2293,15 +2255,14 @@ Retorna o número do candle que realizou a primeira avaliação.
 <COMANDO>
                 
         SE(
-            Identificador();
+            Identificador() 0 !=
         ENTAO
             Loga(PosicaoInicial(), 'Primeira Avaliação');	
         )
 
 </COMANDO>
+
 ```
-
-
 ### ==PosicaoAtual( )==
 
 **Descrição:**
@@ -2321,8 +2282,8 @@ Retorna o número do candle que realizou a avaliação.
         )
 
 </COMANDO>
-```
 
+```
 ### ==PosicaoFinal( )==
 
 **Descrição:**
@@ -2342,14 +2303,13 @@ Retorna o número do candle que realizou a ultima avaliação.
         )
 
 </COMANDO>
+
 ```
-
-
 ### ==QuantidadePosicoes( )==
 
 **Descrição:**
 
-Retorna o total de posições em contratos abertos
+Retorna o total de posições em contratos abertos.
 
 **Sintaxe:**
 
@@ -2374,20 +2334,19 @@ Retorna o total de posições em contratos abertos
     )
 
 </COMANDO>
+
 ```
-
-
 ### ==ReduzPosicoes( )==
 
 **Descrição:**
 
-Retorna o total de posições em contratos abertos
+Reduz as posições em aberto.
 
 **Parâmetros:**
 
-1.  **ATIVO -** "ATIVO"
-2.  **QUANTIDADE -** N° de contratos.	
-3.  **ROTULO -** Nome da estrategia.	
+1.  **ATIVO:** "ATIVO"
+2.  **QUANTIDADE:** N° de contratos.	
+3.  **RÓTULO:** Nome da estrategia.	
 
 **Sintaxe:**
 
@@ -2398,12 +2357,11 @@ Retorna o total de posições em contratos abertos
     SE(
         Minima() #snipers2 <
     ENTAO
-        ReduzPosicoes('ATIVO',1. 'Despertar')
+        ReduzPosicoes('ATIVO', 1, 'Despertar')
     )
 
 </COMANDO>
 ```
-
 
 ### ==ZeraPosicoes( )==
 
@@ -2414,9 +2372,8 @@ Zera as posoções.
 **Parâmetros:**
 
 1.  **FILTRO -** É opcional, utilizado para realizar um filtro para zerar operações por tempo.
-2.  **ROTULO -** Nome da estrategia.	
+2.  **RÓTULO -** Nome da estrategia.	
 	
-
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="ZeraPosicoes( )"}
@@ -2426,17 +2383,17 @@ Zera as posoções.
 <COMANDO>
             
     SE(
-        Identificador() 1 =
-        
         E(
+            Identificador() 1 =
+        ,
             FimDia() 1 =	
         )
     ENTAO
         ZeraOrdens(  , '<estrategia>');
-        
     )
         
 </COMANDO>
+
 ```
 
 ```{.py3 hl_lines="" linenums="60" title="ZeraPosicoes( )"}
@@ -2446,19 +2403,18 @@ Zera as posoções.
 <COMANDO>
             
     SE(
-        Identificador() 1 =
-        
         E(
-            FimDia() 1 =
+            Identificador() 1 =
+        ,
+            FimDia() 1 =	
         )
     ENTAO
         ZeraOrdens();
-        
     )
         
 </COMANDO>
-```
 
+```
 ### ==CardinalidadePosicoes( )==
 
 **Descrição:**
@@ -2467,7 +2423,7 @@ Retorna a quantidade de posições compradas e vendidas.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ReduzPosicoes( )"}
+```{.py3 hl_lines="" linenums="60" title="CardinalidadePosicoes( )"}
 
 <COMANDO>
 
@@ -2490,18 +2446,7 @@ Retorna a quantidade de posições compradas e vendidas.
 </COMANDO>
 ```
 
-
-
-
-
-
-
-
-
-
-
 ## **Opções:**
-
 ### ==DadoOpcao( )==
 
 **Descrição:**
@@ -2522,21 +2467,19 @@ Sua função é retornar todas as informações relevantes de uma opção espec�
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="Logaritmo( )"}
+```{.py3 hl_lines="" linenums="60" title="DadoOpcao( )"}
 
 <ComandoPontoInteresse>
 					
-    AdicionaPontoInteresse(#FimDiaANT 30 +)
+    DadoOpcao(#OPCAO, S)
 
 </ComandoPontoInteresse>
 ```
-
-
 ## **Teste de Consistência:**
 
-O **teste de consistência** tem como principal objetivo criar condicoções para testar todas as funções para que tenhamos um controle se todas as funções estão ou não funcionando perfeitamente mesmo se ocorra atualizações no sistema do robô. Vamos apresentar todas as tags que compõem a estrutura de testes. O arquivo que será utilizado esta no diretório Debug e o nome do arquivo é ***testes.estr***.
+O **teste de consistência** tem como principal objetivo criar condições para testar todas as funções com o objetivo de ter um controle se todas as funções estão ou não funcionando perfeitamente, mesmo se ocorra atualizações no sistema. Vamos apresentar todas as tags que compõem a estrutura de testes. O arquivo que será utilizado esta no diretório Debug na pasta *TESTE DE CONSISTENCIA* e o nome do arquivo é ***testes.estr***.
 
-### <*Nome*>  <*Inicio*> <*Fim*>
+### <*Nome*> <*Inicio*> <*Fim*>
 
 **Nome** é utilizada para definir o nome do testes que está sendo feito, é muito importante para conseguir definir a função, a tag **Inicio** e **Fim** é utilizada para determinar o periodo a ser testado.
 
@@ -2548,10 +2491,9 @@ O **teste de consistência** tem como principal objetivo criar condicoções par
 	<ATIVO> WDOFUT </ATIVO>
                   
 ```
-
 ### <*Ativo*>
 
-A tag **Ativo** é o nome do ativo que irão ocorrer todos os testes.
+A tag **Ativo** é o nome do ativo que vai acontecer todos os testes.
 
 ```{.py3 hl_lines="" linenums="8" title=""}
 
@@ -2559,10 +2501,9 @@ A tag **Ativo** é o nome do ativo que irão ocorrer todos os testes.
                   
 ```
 
-
 ### <*Numero*> <*Nome*>
 
-**Numero** é para determinar o número do teste, a tag **Nome** nesta parte da estrutura é utilizado para identificar qual validação que está sendo feita.
+**Número** é para determinar o número do teste, a tag **Nome** nesta parte da estrutura é utilizado para identificar qual validação que está sendo feita.
 
 ```{.py3 hl_lines="" linenums="12" title=""}
 
@@ -2570,7 +2511,6 @@ A tag **Ativo** é o nome do ativo que irão ocorrer todos os testes.
     <NOME> E.Validacao 1 </NOME>
                   
 ```
-
 ### <*SemprePosicionado*>
 
 O **SemprePosicionado** tem a função de não deixar que ocorra dentro do teste operações longas para que seja analisado candle a candle, por isso que mantemos sempre *N*. 
@@ -2578,24 +2518,20 @@ O **SemprePosicionado** tem a função de não deixar que ocorra dentro do teste
 ```{.py3 hl_lines="" linenums="12" title=""}
 
     <SemprePosicionado> N </SemprePosicionado>
-    <CAPITAL> 100000.00 </CAPITAL>
-                  
+         
 ```
-
 ### <*Capital*>
 
-**Capital** quese refere ao capital disponivel para a execusão dos testes.
-
+**Capital** quese refere ao capital disponível para a execusão dos testes.
 
 ```{.py3 hl_lines="" linenums="12" title=""}
 
-    <CAPITAL> 100000.00 </CAPITAL>
+    <CAPITAL> 100000000 </CAPITAL>
                   
 ```
-
 ### <*Custos*>
 
-Essa tag é responsável por informar os custos/taxas das operações, por padrão, não é alterado os valores desta estrutura.
+Essa tag é responsável por informar os custos/taxas das operações, são alterados conforme o tipo de ativo que está sendo estudado.
 
 ```{.py3 hl_lines="" linenums="16" title=""}
 
@@ -2607,6 +2543,7 @@ Essa tag é responsável por informar os custos/taxas das operações, por padr�
     <REGISTRO> 0.0000008% </REGISTRO>
 
 </CUSTOS>
+                  
 ```
 ### <*Periodo*>
 
@@ -2616,11 +2553,10 @@ Referente ao período gráfico que será utilizado para fazer os testes.
 
 <CUSTOS>
 
-    <PERIODO> D </PERIODO> /*D = Periodo diarop*/
+    <PERIODO> D </PERIODO> /*D = Periodo diario*/
 
 </CUSTOS>
 ```
-
 ### <*ComandoInicio*>
 
 Utilizado para determinar variáveis fixas, mesma ideia do **ComandoInicio** nas execuções de estratégias, por padrão sempre mantemos essas variáveis fixas porque serão utilizadas no decorrer dos testes.
@@ -2629,19 +2565,18 @@ Utilizado para determinar variáveis fixas, mesma ideia do **ComandoInicio** nas
 
 <COMANDOINICIO>
 
-    Seta(#cE, 0);
-    Seta(#cA, 0);
-    Seta(#cCandles, 0);
-    Seta(#cAvaliacoes, 0);
+    SETA(#cE, 0);
+    SETA(#cA, 0);
+    SETA(#cCandles, 0);
+    SETA(#cAvaliacoes, 0);
 
 </COMANDOINICIO>
                   
 ```
-
 ### <*Drawdown*>
 
 Esse conjunto de tags refere-se a proteção do capital principal, onde é determinado uma    
-*Perda maxima, Drawdown maximo, os Gatilhos de Drawdown e Ganho maximo*. Os valores são padrões, não pode ser alterado. 
+*Perda maxima, Drawdown maximo, os Gatilhos de Drawdown e Ganho maximo*. 
 
 ```{.py3 hl_lines="" linenums="45" title=""}
 
@@ -2651,7 +2586,6 @@ Esse conjunto de tags refere-se a proteção do capital principal, onde é deter
 <GANHOMAXIMO> 5 </GANHOMAXIMO>
       
 ```
-
 ### <*Comando*>
 
 É nesta tag onde faremos os **testes de consistências** utilizando as **condicionais** que aprendemos anteriormente.
@@ -2692,7 +2626,6 @@ Esse conjunto de tags refere-se a proteção do capital principal, onde é deter
 </COMANDO>
 
 ```
-
 ### <*ComandoFim*>
 
 Será apenas executado no final da estratégia, utilizado normalmente para obter alguma informação específica no final do teste.
@@ -2723,7 +2656,6 @@ Será apenas executado no final da estratégia, utilizado normalmente para obter
         
     );
 		
-    
 </COMANDOFIM>
 
 ```
@@ -2732,12 +2664,11 @@ Será apenas executado no final da estratégia, utilizado normalmente para obter
 
 **Descrição:**
 
-É apenas utilizada para o teste de consistência. Esta função retorna valido se um teste for verdadeiro e invalido se caso um teste não funcionar.
-
+É apenas utilizada para o teste de consistência. Essa função retorna válido se um teste for verdadeiro e inválido se caso um teste não funcionar.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="Logaritmo( )"}
+```{.py3 hl_lines="" linenums="60" title="AceitaTeste( )"}
 
 <ComandoFim>
     SE(
@@ -2763,9 +2694,8 @@ Será apenas executado no final da estratégia, utilizado normalmente para obter
     );
 
 </COMANDOFIM>
+
 ```
-
-
 ### ==ComentaTeste( )==
 
 **Descrição:**
@@ -2774,20 +2704,20 @@ Será apenas executado no final da estratégia, utilizado normalmente para obter
 
 **Parâmetros:**
 
-1.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-2.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-3.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-4.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-5.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-6.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-7.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-8.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-9.  ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS***
-10. ***VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+1.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+2.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+3.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+4.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+5.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+6.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+7.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+8.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+9.  **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
+10. **VALORES, STRINGS, EXPREÇÕES OU VARIAVEIS**
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="Logaritmo( )"}
+```{.py3 hl_lines="" linenums="60" title="ComentaTeste( )"}
 
     .  .  .
 
@@ -2809,13 +2739,18 @@ Será apenas executado no final da estratégia, utilizado normalmente para obter
 		
 ```
 
-
 ## **Arquivos**
 ### ==CampoArquivo( )==
 
 **Descrição:**
 
-Utilizado para buscar **UMA** coluna especifica em um arquivo.
+Ela procura uma parâmetro na primeira coluna e retorna um valor da linha encontrada
+
+**Parâmetros:**
+
+1. **NOME_QRQUIVO:** É o nome do arquivo a ser analisado. 
+2. **PROCURA:** Valor a ser procurado na primeira coluna.
+3. **COLUNA:** A coluna que retornará na linha encontrada. 
 
 **Sintaxe:**
 
@@ -2823,24 +2758,23 @@ Utilizado para buscar **UMA** coluna especifica em um arquivo.
 
 <COMANDOINICIO>
 
-    SETA(#DADOS, CampoArquivo('Estatistica.txt', 200, 3);
+    SETA(#DADOS, CampoArquivo('Estatistica.txt', Hora(), 3);
     
 </COMANDOINICIO>
 ```
-
 ### ==CamposArquivo( )==
 
 **Descrição:**
 
-Utilizado para buscar **COLUNAS** específicas em um arquivo.
+Ela procura uma parâmetro na primeira coluna e retorna valores da linha encontrada.
 
 **Parâmetros:**
 
-1.  ***NOME_DO_ARQUIVO:*** informar o nome do arquivo
-2.  ***PROCURA:***  Dado que precisa procurar.
-3.  ***NOME_VARIAVEL:*** Informar a variavel
-4.  ***X:*** Informa o primeiro campo.
-5.  ***Y:*** Informa até que campo será buscado.
+1.  **NOME_DO_ARQUIVO:** informar o nome do arquivo
+2.  **PROCURA:**  Dado que precisa procurar.
+3.  **NOME_VARIAVEL:** Informar a variavel
+4.  **X:** Informa o primeiro campo.
+5.  **Y:** Informa até que campo será buscado.
 
 **Sintaxe:**
 
@@ -2848,9 +2782,10 @@ Utilizado para buscar **COLUNAS** específicas em um arquivo.
 
 <COMANDOINICIO>
 
-    SETA(#DADOS, CamposArquivo('Estatistica.txt', 200, #TESTE, 0, 4);
+    SETA(#DADOS, CamposArquivo('Estatistica.txt', Hora(), #TESTE, 0, 4);
 
 </COMANDOINICIO>
+
 ```
 ### ==OADATE( )==
 
@@ -2867,6 +2802,7 @@ Utilizado para formatar o horário para o excel.
 
     
 </COMANDOINICIO>
+
 ```
 
 ### ==GravaMatriz( )==
@@ -2877,11 +2813,8 @@ Grava um arquivo substituindo o anterior(caso existir).
 
 **Parâmetros:**
 
-1.  ***NOME_DO_ARQUIVO:*** informar o nome do arquivo
-2.  ***NOME_VARIAVEL:***  O nome da variavel e ser colocado no arquivo.
-3.  ***X:*** Informar o primeiro vetor da variavel especial.
-4.  ***Y:***  Informar o segundo vetor da variavel especial.
-5.  ***Z:*** Informar o terceiro vetor da variavel especial.
+1.  **NOME_DO_ARQUIVO:** informar o nome do arquivo
+2.  **NOME_VARIAVEL:**  O nome da variavel e ser colocado no arquivo.
 
 **Sintaxe:**
 
@@ -2889,9 +2822,10 @@ Grava um arquivo substituindo o anterior(caso existir).
 
 <COMANDOFIM>
 
-    GravaMatriz('estatistica.txt', #DADOS, 10, 20, 10);
+    GravaMatriz('estatistica.txt', #DADOS);
 
 </COMANDOFIM>
+
 ```
 
 ### ==ConcatenaMatriz( )==
@@ -2902,11 +2836,8 @@ Adicionar informações em um arquivo.
 
 **Parâmetros:**
 
-1.  ***NOME_DO_ARQUIVO:*** informar o nome do arquivo.
-2.  ***NOME_VARIAVEL:***  O nome da variavel e ser colocado no arquivo.
-3.  ***X:*** Informar o primeiro vetor da variavel especial.
-4.  ***Y:***  Informar o segundo vetor da variavel especial.
-5.  ***Z:*** Informar o terceiro vetor da variavel especial.
+1.  **NOME_DO_ARQUIVO:** informar o nome do arquivo.
+2.  **NOME_VARIAVEL:**  O nome da variavel e ser colocado no arquivo.
 
 **Sintaxe:**
 
@@ -2914,7 +2845,7 @@ Adicionar informações em um arquivo.
 
 <COMANDO>
 
-    ConcatenaMatriz('estatistica.txt', #DADOS, 1, 0, 3);
+    ConcatenaMatriz('estatistica.txt', #DADOS);
 
 </COMANDO>
 ```
@@ -2926,23 +2857,21 @@ Adicionar informações em um arquivo.
 
 **Parâmetros:**
 
-1.  ***NOME_DO_TESTE:*** informar o nome do teste.
-2.  ***NOME_FUNCAO:***  Informar o nome da variavel destino da soma da matriz
-3.  ***cor 01:*** Primeira tonalidade de cor
-4.  ***cor 02:*** Segunda tonalidade de cor.
-
+1.  **NOME_DO_TESTE:** informar o nome do teste.
+2.  **NOME_FUNCAO:**  Informar o nome da variavel destino da soma da matriz
+3.  **cor 01:** Primeira tonalidade de cor
+4.  **cor 02:** Segunda tonalidade de cor.
 
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="ChamaExternoR( )"}
 
-
 <COMANDOINICIO>
 
     SETA(#max_dia, maxima());
     SETA(#min_dia,  minima());
-    Seta(#numero_dia, 0);
-    Seta(#saltos_interesse, 10);
+    SETA(#numero_dia, 0);
+    SETA(#saltos_interesse, 10);
     
 </COMANDOINICIO>
     . . .
@@ -3079,14 +3008,10 @@ Adicionar informações em um arquivo.
 </COMANDOFIM>
 ```
 
-
-
-
 ## **Funções externas**
 ### ==ChamaExternoR( )==
 
 **Descrição:**
-
 
 **Sintaxe:**
 
@@ -3095,22 +3020,19 @@ Adicionar informações em um arquivo.
 <COMANDOFIM>
 
 
-    
 </COMANDOFIM>
 ```
 ### ==ChamaExternoPython( )==
 
 **Descrição:**
 
-Sua função é para utilizar funções de códigos em formato de python
+Sua função é para utilizar funções de códigos em formato de python.
 
 **Parâmetros:**
 
-1.  ***NOME_DO_ARQUIVO:*** informar o nome do arquivo em python.
-2.  ***NOME_FUNCAO:***  O nome da função em python.
-3.  ***X:*** Parametro da função.
-4.  ***Y:***  Parametro da função.
-5.  ***Z:*** Parametro da função.
+1.  **NOME_DO_ARQUIVO:** informar o nome do arquivo em python.
+2.  **NOME_FUNCAO:**  O nome da função em python.
+
 
 **Sintaxe:**
 
