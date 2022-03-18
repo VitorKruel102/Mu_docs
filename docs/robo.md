@@ -29,7 +29,7 @@ As duas primeiras tags que vamos estudas são utilizados para nomear a estratég
 ### <*ComandoInicio*>
 
 O **Comando Inicio** é inicializado apenas no começo da estratégia, podemos utiliza-lo para determinar variáveis com o objetivo de serem
-parâmetros padrões para o restante da execução.
+parâmetros padrões para o restante da execução..
 
 ```{.py3 hl_lines="" linenums="8" title=""}
 
