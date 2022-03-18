@@ -377,14 +377,14 @@ Existe DUAS formas para determinar uma matriz:
     /*ADICIONANDO STRING NA MATRIZ*/
 
     /*Forma para adicionar no final da matriz*/
-    SETA(@NOME_VARIAVEL(FIM), 1);              /*Atribuindo um valor no vetor X;*/
-    SETA(@NOME_VARIAVEL(FIM, FIM), 2);         /*Atribuindo um valor no vetor Y;*/
-    SETA(@NOME_VARIAVEL(FIM, FIM, FIM), 3);    /*Atribuindo um valor no vetor Z;*/
+    SETA(@NOME_VARIAVEL(FIM), 'D1');              /*Atribuindo um valor no vetor X;*/
+    SETA(@NOME_VARIAVEL(FIM, FIM), 'D2');         /*Atribuindo um valor no vetor Y;*/
+    SETA(@NOME_VARIAVEL(FIM, FIM, FIM), 'D4');    /*Atribuindo um valor no vetor Z;*/
 
     /*Forma para adicionar em um index específico*/
-    SETA(@NOME_VARIAVEL(1), 3);                /*Atribuindo um valor no indice em X*/
-    SETA(@NOME_VARIAVEL(1,1), 3);              /*Atribuindo um valor no indice em Y*/
-    SETA(@NOME_VARIAVEL(1,1,1), 3);            /*Atribuindo um valor no indice em Z*/
+    SETA(@NOME_VARIAVEL(1), 'D3');                /*Atribuindo um valor no indice em X*/
+    SETA(@NOME_VARIAVEL(1,1), 'D4');              /*Atribuindo um valor no indice em Y*/
+    SETA(@NOME_VARIAVEL(1,1,1),'D5');            /*Atribuindo um valor no indice em Z*/
 
 <COMANDO> 
 ```
