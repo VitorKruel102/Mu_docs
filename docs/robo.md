@@ -163,18 +163,6 @@ A seguir um exemplo de uma estratégia:
 ### <*ComandoFechaPosicao*>
 ### <*ComandoPontoINTERESSE*>
 
-
-
-
-
-
-
-
-
-
-
-
-
 ### <*Naodesenha*>
 
 Sua funcionalidade é não plotar uma função na gráfico.
@@ -211,15 +199,13 @@ O **Comando fim** é executado apenas no final da estratégia, utilizado normalm
 ### <*Descricao*>
 
 
-
-
 ## **Valores e tipos:**
 
-Um **valor** é uma das coisas básicas com as quais um programa trabalha, como letra ou um número. Alguns valores que vimos até agora foi *12*, 0.0000008 e *'Valor total'*, por exemplo.
+Um **valor** é uma das coisas básicas com as quais um programa trabalha, como letra ou um número. Alguns valores que vimos até agora foi **12**, **0.0000008** e **'Valor total'**, por exemplo.
 
-Esses valores pertecem a **tipos** diferentes: *12* é um número inteiro, *0.0000008* é um **número de ponto flutuante** e *'Valor total'* é uma string, assim chamada porque as letras que contém estão em uma sequência em cadeia (dentro de aspas simples).
+Esses valores pertecem a **tipos** diferentes: *12* é um **número inteiro**, *0.0000008* é um **número de ponto flutuante** e *'Valor total'* é uma **string**, assim chamada porque as letras que contém estão em uma sequência em cadeia (dentro de aspas simples).
 
-### Exemplos 
+#### Exemplos: 
 
 |**VALORES**  |**TIPOS**|
 |             |         |
