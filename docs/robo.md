@@ -301,16 +301,16 @@ Utilizado para calcular a potencia de um número.
 
 **Descrição:**
 
-Utilizado para somar dois valores.
+Utilizado para **somar** dois valores.
 
 **Parâmetros:**
 
-1.  Primeiro valor
+1.  Primeiro valor.
 2.  Segundo valor.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="Potencia( )"}
+```{.py3 hl_lines="" linenums="60" title="Soma( )"}
 
 <COMANDO>
 					
@@ -319,11 +319,116 @@ Utilizado para somar dois valores.
 </COMANDO>
 ```
 
+### ==Subtrai( )==
+
+**Descrição:**
+
+Utilizado para **subtrair** dois valores.
+
+**Parâmetros:**
+
+1.  Primeiro valor.
+2.  Segundo valor.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Subtrai( )"}
+
+<COMANDO>
+					
+    SETA(#subtraiVALORES, Subtrai(15525522,152555));
+
+</COMANDO>
+```
+
+### ==Multiplica( )==
+
+**Descrição:**
+
+Utilizado para **multiplicar** dois valores.
+
+**Parâmetros:**
+
+1.  Primeiro valor.
+2.  Segundo valor.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Multiplica( )"}
+
+<COMANDO>
+					
+    SETA(#MultiplicaVALORES, Multiplica(50, 2));
+
+</COMANDO>
+```
 
 
+### ==Dividi( )==
 
+**Descrição:**
 
+Utilizado para **Dividir** dois valores.
 
+**Parâmetros:**
+
+1.  Primeiro valor.
+2.  Segundo valor.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Dividi( )"}
+
+<COMANDO>
+					
+    SETA(#dividiVALORES, Dividi(50,5));
+
+</COMANDO>
+```
+
+### ==TaxaVariacao( )==
+
+**Descrição:**
+
+Utilizado calcular a **TaxaVariacao** entre dois valores, ele retorna em uma valor decimal.
+
+**Parâmetros:**
+
+1.  Valor atual.
+2.  Valor anterior.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="TaxaVariacao( )"}
+
+<COMANDO>
+					
+    SETA(#variacao, TaxaVariacao(50, 48));
+
+</COMANDO>
+```
+
+### ==TaxaVariacaoPercentual( )==
+
+**Descrição:**
+
+Utilizado calcular a **Taxa Variacao Percentual** entre dois valores.
+
+**Parâmetros:**
+
+1.  Valor atual.
+2.  Valor anterior.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="TaxaVariacaoPercentual( )"}
+
+<COMANDO>
+					
+    SETA(#variacaoP, TaxaVariacaoPercentual(50, 48));
+
+</COMANDO>
+```
 
 
 
