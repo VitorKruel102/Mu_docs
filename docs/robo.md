@@ -618,6 +618,253 @@ Retorna o valor minimo em um conjunto até 5 parâmetros.
 </COMANDO>
 ```
 
+## **Conversor:**
+
+### ==Valor( )==
+
+**Descrição:**
+
+Utilizado para converter um texto númerico para número.
+
+**Parâmetros:**
+
+1.  Texto númerico.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Valor( )"}
+
+<COMANDO>
+					
+    SETA(#ConverteTexto, Valor('252'));
+
+</COMANDO>
+```
+
+## **Determinar variáveis:**
+### ==Seta()==
+
+**Descrição:**
+
+Seta é uma função para determinar uma variável. O seu objeto é capaz de reter e representar um valor ou expressão. 
+Enquanto as variáveis só “existem” em tempo de execução, elas são associadas a *“nomes”*, chamados identificadores, durante o tempo de desenvolvimento.
+
+**Parâmetros:**
+
+1. *NOME_VARIÁVEL*
+2. *EXPRESSÃO* 
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Seta( )"}
+
+<COMANDO>
+        
+    SETA(#NOME_VARIAVEL, 1);       /*Valores*/
+    SETA(@NOME_STRING, 'TEXTO');   /*Strings*/
+   
+<COMANDO> 
+```
+
+
+## **Candlesticks:**
+### ==Abertura( )==
+
+**Descrição:**
+
+Referente a **ABERTURA** do Candle. Podendo ser utilizada sem parâmetros que retornara a abertura do candle atual, ou poderar utilizá-la com dois parâmetros.
+
+**Parâmetros:**
+
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Abertura( )"}
+
+<COMANDO>
+					
+    Abertura( )   /*Abertura do candle atual*/
+    Abertura(,1)  /*Abertura do candle anterior*/
+    Abertura(,5)  /*Abertura do quinto candle anterior*/
+
+</COMANDO>
+```
+### ==Fechamento( )==
+
+**Descrição:**
+
+Referente a **FECHAMENTO** do Candle. Podendo ser utilizada sem parâmetros que retornara a fechamento do candle atual, ou poderar utilizá-la com dois parâmetros.
+
+**Parâmetros:**
+
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Fechamento( )"}
+
+<COMANDO>
+					
+    Fechamento( )   /*Fechamento do candle atual*/
+    Fechamento(,1)  /*Fechamento do candle anterior*/
+    Fechamento(,5)  /*Fechamento do quinto candle anterior*/
+
+</COMANDO>
+```
+### ==Maxima( )==
+
+**Descrição:**
+
+Referente a **MAXIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a maxima do candle atual, ou poderar utilizá-la com dois parâmetros.
+
+**Parâmetros:**
+
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Maxima( )"}
+
+<COMANDO>
+					
+    Maxima( )   /*Maxima do candle atual*/
+    Maxima(,1)  /*Maxima do candle anterior*/
+    Maxima(,5)  /*Maxima do quinto candle anterior*/
+
+</COMANDO>
+```
+
+### ==Minima( )==
+
+**Descrição:**
+
+Referente a **MINIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a minima do candle atual, ou poderar utilizá-la com dois parâmetros.
+
+**Parâmetros:**
+
+1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
+2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Minima( )"}
+
+<COMANDO>
+					
+    Minima( )   /*Minima do candle atual*/
+    Minima(,1)  /*Minima do candle anterior*/
+    Minima(,5)  /*Minima do quinto candle anterior*/
+
+</COMANDO>
+```
+
+### ==Anterior( )==
+
+**Descrição:**
+
+Esta função utilizamos para localizar os candles anteriores.
+
+**Parâmetros:**
+
+1.  **ATRASO:** Quantos candles posteriores.
+2.  **EXPRESSÃO:**  Informação dessejada.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Anterior( )"}
+
+<COMANDO>
+					
+    Anterior(1, Fechamento())   /*Fechamento do candle anterior*/
+    Anterior(2, VOLUME())       /*Volume do segundo candle anterior*/
+
+</COMANDO>
+```
+### ==Proximo( )==
+
+**Descrição:**
+
+Referente a candles posteriores. Utilizado apenas para estatística.
+
+**Parâmetros:**
+
+1.  **POSTERIOR:** Quantos candles posteriores.
+2.  **EXPRESSÃO:**  Informação dessejado.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Proximo( )"}
+
+<COMANDO>
+					
+    Proximo(1, Fechamento())   /*Fechamento do candle posterior*/
+    Proximo(2, VOLUME())       /*Volume do segundo candle posterior*/
+
+</COMANDO>
+
+```
+## **Cores Candles:**
+
+Exemplos:
+
+|Cores             |Funções                   |
+|                  |                          | 
+|Aco               |CorCandle(Aco)            |                  
+|Amarelo		   |CorCandle(Amarelo) 		  |
+|Amarelo Claro     |CorCandle(AmareloClaro)   |
+|Aqua			   |CorCandle(AcAquao)        |
+|Azul			   |CorCandle(Azul) 	      | 
+|AzulClaro	       |CorCandle(Azul Claro)     |
+|AzulEscuro	       |CorCandle(Azul Escuro)	  |
+|Bege			   |CorCandle(Bege)	          |
+|Branco			   |CorCandle(Branco)	      |
+|Cadet  		   |CorCandle(Cadet)          |
+|Caqui			   |CorCandle(Caqui)	      |
+|Chocolate		   |CorCandle(Chocolate)	  |
+|Ciano			   |CorCandle(Ciano)	      |
+|Cinza			   |CorCandle(Cinza)	      |
+|Cinza Claro       |CorCandle(CinzaClaro)     |
+|Cinza Escuro      |CorCandle(CinzaEscuro)    |
+|Coral			   |CorCandle(Coral)	      |
+|Floresta		   |CorCandle(Floresta)       |
+|Fucsia			   |CorCandle(Fucsia)         |
+|Indigo			   |CorCandle(Indigo)         |
+|Laranja		   |CorCandle(Laranja)        |
+|Laranja Escuro	   |CorCandle(LaranjaEscuro)  |
+|Laranja Vermelho  |CorCandle(LaranjaVermelho)|
+|Lavanda		   |CorCandle(Lavanda)        |
+|Magenta		   |CorCandle(Magenta)        |
+|Mar  			   |CorCandle(Mar)            |
+|Marinho		   |CorCandle(Marinho)        |
+|Marrom			   |CorCandle(Marrom)         |
+|Oliva			   |CorCandle(Oliva)          |
+|Oliva Escuro      |CorCandle(OlivaEscuro)    |
+|Ouro			   |CorCandle(Ouro)           |
+|Prata			   |CorCandle(Prata)          |
+|Preto			   |CorCandle(Preto)          |
+|Rosa		       |CorCandle(Rosa)           |
+|Roxo    		   |CorCandle(Roxo)           |
+|Salmao	   	       |CorCandle(Salmao)         |
+|Tijolo			   |CorCandle(Tijolo)         |
+|Tomate			   |CorCandle(Tomate)         |
+|Turquesa		   |CorCandle(Turquesa)       |
+|Verde			   |CorCandle(Verde)          |
+|Verde Claro	   |CorCandle(VerdeClaro)     | 
+|Vermelho		   |CorCandle(Vermelho)       |
+|Vermelho Escuro   |CorCandle(VermelhoEscuro) |
+|Violeta		   |CorCandle(Violeta)        |
+
+
+
+
+
+
+
+
 
 
 ## **Comentários:**
@@ -640,30 +887,9 @@ Por essa razão, é uma boa ideia acrescentar notas aos seus programas para expl
 
 <COMANDO> 
 ```
-## **Determinar variáveis:**
 
-### ==Seta()==
 
-**Descrição:**
 
-Seta é uma variável. O seu objeto é capaz de reter e representar um valor ou expressão. 
-Enquanto as variáveis só “existem” em tempo de execução, elas são associadas a *“nomes”*, chamados identificadores, durante o tempo de desenvolvimento.
-
-**Parâmetros:**
-
-1. *NOME_VARIÁVEL*
-2. *EXPRESSÃO* 
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Seta( )"}
-<COMANDO>
-        
-    SETA(#NOME_VARIAVEL, 1);       /*Valores*/
-    SETA(@NOME_STRING, 'TEXTO');   /*Strings*/
-   
-<COMANDO> 
-```
 ## **Definindo uma matriz:**
 
 **Descrição:**
@@ -1180,148 +1406,7 @@ Ela é responsável por analisar processos, o resultado será colocado no arquiv
 </COMANDO>
 
 ```
-## **Candlesticks:**
-### ==Abertura( )==
 
-**Descrição:**
-
-Referente a **ABERTURA** do Candle. Podendo ser utilizada sem parâmetros que retornara a abertura do candle atual, ou poderar utilizá-la com dois parâmetros.
-
-**Parâmetros:**
-
-1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
-2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Abertura( )"}
-
-<COMANDO>
-					
-    Abertura( )   /*Abertura do candle atual*/
-    Abertura(,1)  /*Abertura do candle anterior*/
-    Abertura(,5)  /*Abertura do quinto candle anterior*/
-
-</COMANDO>
-```
-### ==Fechamento( )==
-
-**Descrição:**
-
-Referente a **FECHAMENTO** do Candle. Podendo ser utilizada sem parâmetros que retornara a fechamento do candle atual, ou poderar utilizá-la com dois parâmetros.
-
-**Parâmetros:**
-
-1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
-2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Fechamento( )"}
-
-<COMANDO>
-					
-    Fechamento( )   /*Fechamento do candle atual*/
-    Fechamento(,1)  /*Fechamento do candle anterior*/
-    Fechamento(,5)  /*Fechamento do quinto candle anterior*/
-
-</COMANDO>
-```
-### ==Maxima( )==
-
-**Descrição:**
-
-Referente a **MAXIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a maxima do candle atual, ou poderar utilizá-la com dois parâmetros.
-
-**Parâmetros:**
-
-1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
-2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Maxima( )"}
-
-<COMANDO>
-					
-    Maxima( )   /*Maxima do candle atual*/
-    Maxima(,1)  /*Maxima do candle anterior*/
-    Maxima(,5)  /*Maxima do quinto candle anterior*/
-
-</COMANDO>
-```
-
-
-
-### ==Minima( )==
-
-**Descrição:**
-
-Referente a **MINIMA** do Candle. Podendo ser utilizada sem parâmetros que retornara a minima do candle atual, ou poderar utilizá-la com dois parâmetros.
-
-**Parâmetros:**
-
-1.  **TIPOPOSIÇÃO:** **A =** Posição do ativo, **D =** Dinheiro da posição, **O =** Posição de outro ativo.
-2.  **PERÍODO:** 0 = Candle Atual, 1 = Candle Anterior, etc...
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Minima( )"}
-
-<COMANDO>
-					
-    Minima( )   /*Minima do candle atual*/
-    Minima(,1)  /*Minima do candle anterior*/
-    Minima(,5)  /*Minima do quinto candle anterior*/
-
-</COMANDO>
-```
-
-### ==Anterior( )==
-
-**Descrição:**
-
-Esta função utilizamos para localizar os candles anteriores.
-
-**Parâmetros:**
-
-1.  **ATRASO:** Quantos candles posteriores.
-2.  **EXPRESSÃO:**  Informação dessejado.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Anterior( )"}
-
-<COMANDO>
-					
-    Anterior(1, Fechamento())   /*Fechamento do candle anterior*/
-    Anterior(2, VOLUME())       /*Volume do segundo candle anterior*/
-
-</COMANDO>
-```
-### ==Proximo( )==
-
-**Descrição:**
-
-Referente a candles posteriores. Utilizado apenas para estatística.
-
-**Parâmetros:**
-
-1.  **POSTERIOR:** Quantos candles posteriores.
-2.  **EXPRESSÃO:**  Informação dessejado.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Proximo( )"}
-
-<COMANDO>
-					
-    Proximo(1, Fechamento())   /*Fechamento do candle posterior*/
-    Proximo(2, VOLUME())       /*Volume do segundo candle posterior*/
-
-</COMANDO>
-
-```
 ### ==CandleFechaPeríodo( )==
 
 **Descrição:**
@@ -1347,56 +1432,7 @@ Retorna se o fechamento do período atual é o mesmo do fechamento do parâmetro
      
 </COMANDO>
 ```
-## **Cores Candles:**
 
-Exemplos:
-
-|Cores             |Funções                   |
-|                  |                          | 
-|Aco               |CorCandle(Aco)            |                  
-|Amarelo		   |CorCandle(Amarelo) 		  |
-|Amarelo Claro     |CorCandle(AmareloClaro)   |
-|Aqua			   |CorCandle(AcAquao)        |
-|Azul			   |CorCandle(Azul) 	      | 
-|AzulClaro	       |CorCandle(Azul Claro)     |
-|AzulEscuro	       |CorCandle(Azul Escuro)	  |
-|Bege			   |CorCandle(Bege)	          |
-|Branco			   |CorCandle(Branco)	      |
-|Cadet  		   |CorCandle(Cadet)          |
-|Caqui			   |CorCandle(Caqui)	      |
-|Chocolate		   |CorCandle(Chocolate)	  |
-|Ciano			   |CorCandle(Ciano)	      |
-|Cinza			   |CorCandle(Cinza)	      |
-|Cinza Claro       |CorCandle(CinzaClaro)     |
-|Cinza Escuro      |CorCandle(CinzaEscuro)    |
-|Coral			   |CorCandle(Coral)	      |
-|Floresta		   |CorCandle(Floresta)       |
-|Fucsia			   |CorCandle(Fucsia)         |
-|Indigo			   |CorCandle(Indigo)         |
-|Laranja		   |CorCandle(Laranja)        |
-|Laranja Escuro	   |CorCandle(LaranjaEscuro)  |
-|Laranja Vermelho  |CorCandle(LaranjaVermelho)|
-|Lavanda		   |CorCandle(Lavanda)        |
-|Magenta		   |CorCandle(Magenta)        |
-|Mar  			   |CorCandle(Mar)            |
-|Marinho		   |CorCandle(Marinho)        |
-|Marrom			   |CorCandle(Marrom)         |
-|Oliva			   |CorCandle(Oliva)          |
-|Oliva Escuro      |CorCandle(OlivaEscuro)    |
-|Ouro			   |CorCandle(Ouro)           |
-|Prata			   |CorCandle(Prata)          |
-|Preto			   |CorCandle(Preto)          |
-|Rosa		       |CorCandle(Rosa)           |
-|Roxo    		   |CorCandle(Roxo)           |
-|Salmao	   	       |CorCandle(Salmao)         |
-|Tijolo			   |CorCandle(Tijolo)         |
-|Tomate			   |CorCandle(Tomate)         |
-|Turquesa		   |CorCandle(Turquesa)       |
-|Verde			   |CorCandle(Verde)          |
-|Verde Claro	   |CorCandle(VerdeClaro)     | 
-|Vermelho		   |CorCandle(Vermelho)       |
-|Vermelho Escuro   |CorCandle(VermelhoEscuro) |
-|Violeta		   |CorCandle(Violeta)        |
 
 ## **Condicionais e recursividade:**
 
