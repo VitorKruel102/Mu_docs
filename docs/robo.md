@@ -386,6 +386,30 @@ Utilizado para **Dividir** dois valores.
 </COMANDO>
 ```
 
+
+### ==Exp( )==
+
+**Descrição:**
+
+**exp(x)** é a função exponencial cuja base é o número de Euler 
+(um número irracional que vale aproximadamente 2,718281828). 
+
+**Parâmetros:**
+
+1.  Valor.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Exp( )"}
+
+<COMANDO>
+					
+    SETA(#ValorEuler, Exp(1));
+
+</COMANDO>
+```
+
+
 ### ==TaxaVariacao( )==
 
 **Descrição:**
