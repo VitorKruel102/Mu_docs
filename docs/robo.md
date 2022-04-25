@@ -77,7 +77,7 @@ Essa tag é responsável por informar os custos/taxas das operações, são alte
     <REGISTRO> 0.0140% </REGISTRO>
 
 </CUSTOS>
-     
+```   
 
 ### <*Periodo*>
 
@@ -91,7 +91,7 @@ Essa tag é responsável por informar os custos/taxas das operações, são alte
                  
 ```
 
-### <*Drawdown*>
+### TAGS Controle de Risco
 
 Esse conjunto de tags refere-se a proteção do capital principal, onde é determinado uma    
 *Perda maxima, Drawdown maximo, os Gatilhos de Drawdown e Ganho maximo*. 
