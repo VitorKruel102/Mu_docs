@@ -205,7 +205,7 @@ Um **valor** é uma das coisas básicas com as quais um programa trabalha, como 
 
 Esses valores pertecem a **tipos** diferentes: *12* é um **número inteiro**, *0.0000008* é um **número de ponto flutuante** e *'Valor total'* é uma **string**, assim chamada porque as letras que contém estão em uma sequência em cadeia (dentro de aspas simples).
 
-#### Exemplos: 
+### **Exemplos** 
 
 |**VALORES**  |**TIPOS**|
 |             |         |
@@ -240,8 +240,8 @@ Retorna o resto da dívisão.
 
 **Parâmetros:**
 
-1.  **VALOR:** Dividendo
-2.  **VALOR:** Divisor
+1.  Valor do Dividendo
+2.  Valor do Divisor
 
 **Sintaxe:**
 
@@ -258,11 +258,11 @@ Retorna o resto da dívisão.
 
 **Descrição:**
 
-É uma função que tem como padrão o número de Euler, utilizando a **Base = e**
+É uma função que tem como padrão o número de Euler, utilizando a **Base = e**.
 
 **Parâmetros:**
 
-1.  **VALOR:** O valor a ser calculado.
+1.  O valor a ser calculado.
 
 **Sintaxe:**
 
@@ -279,11 +279,12 @@ Retorna o resto da dívisão.
 
 **Descrição:**
 
-Utilizado para retornar uma potência de um número
+Utilizado para calcular a potencia de um número.
 
 **Parâmetros:**
 
-1.  **VALOR:** O valor a ser calculado.
+1.  Valor da Base.
+2.  Valor do Expoente.
 
 **Sintaxe:**
 
@@ -295,48 +296,46 @@ Utilizado para retornar uma potência de um número
 
 </COMANDO>
 ```
-### ==SomaMatriz( )==
+
+### ==Soma( )==
 
 **Descrição:**
 
-Utilizado para somar os valores de dentro de uma matriz. Onde sua função é pegar a soma de uma matriz e atribuir dentro de uma variável.
+Utilizado para somar dois valores.
 
 **Parâmetros:**
 
-1.  **NOME_VARIAVEL_DESTINO:** O nome da variavel que retornará o valor da soma da matriz.
-2.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
+1.  Primeiro valor
+2.  Segundo valor.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="SomaMatriz( )"}
+```{.py3 hl_lines="" linenums="60" title="Potencia( )"}
 
 <COMANDO>
 					
-   SomaMatriz(#Soma_da_matriz, #matriz);
+    SETA(#Potencia_10, Potencia(10));
 
 </COMANDO>
 ```
 
-### ==ZeraMatriz( )==
 
-**Descrição:**
 
-Utilizado para zerar valores de uma matriz.
 
-**Parâmetros:**
 
-1.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
 
-**Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ZeraMatriz( )"}
 
-<COMANDO>
-					
-   ZeraMatriz(#matriz);
 
-</COMANDO>
-```
+
+
+
+
+
+
+
+
+
 
 
 ## **Comentários:**
@@ -431,6 +430,55 @@ Existe DUAS formas para determinar uma matriz:
 
 <COMANDO> 
 ```
+
+## **Matrizes:**
+
+
+### ==SomaMatriz( )==
+
+**Descrição:**
+
+Utilizado para somar os valores de dentro de uma matriz. Onde sua função é pegar a soma de uma matriz e atribuir dentro de uma variável.
+
+**Parâmetros:**
+
+1.  **NOME_VARIAVEL_DESTINO:** O nome da variavel que retornará o valor da soma da matriz.
+2.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="SomaMatriz( )"}
+
+<COMANDO>
+					
+   SomaMatriz(#Soma_da_matriz, #matriz);
+
+</COMANDO>
+```
+
+### ==ZeraMatriz( )==
+
+**Descrição:**
+
+Utilizado para zerar valores de uma matriz.
+
+**Parâmetros:**
+
+1.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="ZeraMatriz( )"}
+
+<COMANDO>
+					
+   ZeraMatriz(#matriz);
+
+</COMANDO>
+```
+
+
+
 
 ## **Loop:**
 
