@@ -81,7 +81,7 @@ Essa tag é responsável por informar os custos/taxas das operações, são alte
 
 ### <*Periodo*>
 
-É o período preferencial da estratégia, mas não é necessário mudar todas as vezes que for estudar outros tempos gráficos, dentro do sistema conseguimos alterar para um novo período no gráfico, apenas *DIGITANDO* o novo período no gráfico e clicando *ENTER* o sistama mudará automaticamente.
+É o período preferencial da estratégia, mas não é necessário mudar todas as vezes que for estudar outros tempos gráficos, dentro do sistema conseguimos alterar para um novo período, apenas *DIGITANDO* o novo período no gráfico e clicando *ENTER* o sistama mudará automaticamente.
 
 ```{.py3 hl_lines="" linenums="23" title=""}
 
