@@ -430,11 +430,74 @@ Utilizado calcular a **Taxa Variacao Percentual** entre dois valores.
 </COMANDO>
 ```
 
+### ==Arredonda( )==
+
+**Descrição:**
+
+Utilizado **arredondar** um valor decimal. É composto por dois parâmetros, o segundo é a 
+quantidade de casas depois da vírgula que gostaria de permanecer, se o valor anterior ao arredondamento 
+for igual ou maior que **5** será arredondado para cima, caso o contrario, será para baixo. 
+
+**Parâmetros:**
+
+1.  Valor decimal.
+2.  N° de casas de interesse.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Arredonda( )"}
+
+<COMANDO>
+					
+    SETA(#ArredondaValor, Arredonda(50.5624, 2));
+
+</COMANDO>
+```
 
 
+### ==Inteiro( )==
 
+**Descrição:**
 
+Utilizado para transformar um valor decimal em número inteiro. 
 
+**Parâmetros:**
+
+1.  Valor decimal.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Inteiro( )"}
+
+<COMANDO>
+					
+    SETA(#ValorInteiro, Inteiro(50.5624));
+
+</COMANDO>
+```
+
+### ==Trunca( )==
+
+**Descrição:**
+
+Utilizado para cortar as casas decimais de número. O segundo parâmetro informa
+a quantidade de casas que permaneceram depois da vírgula.
+
+**Parâmetros:**
+
+1.  Valor decimal.
+1.  N° de casas de interesse.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Trunca( )"}
+
+<COMANDO>
+					
+    SETA(#ValorTrunca, Trunca(50.5624, 2));
+
+</COMANDO>
+```
 
 
 
