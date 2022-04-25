@@ -314,7 +314,7 @@ Utilizado para somar dois valores.
 
 <COMANDO>
 					
-    SETA(#Potencia_10, Potencia(10));
+    SETA(#SOMAVALORES, Soma(15525522,152555));
 
 </COMANDO>
 ```
