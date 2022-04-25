@@ -222,7 +222,7 @@ Esses valores pertecem a **tipos** diferentes: *12* é um **número inteiro**, *
 
 ### **Começando a calcular**
 
-A linguagem usa como padrão para realizar os seus cálculos a Notação Polonesa Reversa(RPN). Perceba a seguir a diferença entre os cálculos convencionais e os cálculos com a Notação Polonesa Reversa.
+A linguagem usa como padrão para realizar os seus cálculos a Notação Polonesa Reversa(RPN). Perceba a seguir a diferença entre os cálculos convencionais e os cálculos em RPN.
 
 |**Cálculos convencionais**        |**Cálculos com RPN**            |
 |                                  |                                |
