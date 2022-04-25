@@ -386,7 +386,6 @@ Utilizado para **Dividir** dois valores.
 </COMANDO>
 ```
 
-
 ### ==Exp( )==
 
 **Descrição:**
@@ -570,8 +569,54 @@ escolhido.
 </COMANDO>
 ```
 
+### ==maxM( )==
 
+**Descrição:**
 
+Retorna o valor maximo em um conjunto até 5 parâmetros.
+
+**Parâmetros:**
+
+1.  Primeiro Valor
+2.  Segundo Valor
+3.  Terceiro Valor
+4.  Quarto Valor
+5.  Quinto Valor
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="maxM( )"}
+
+<COMANDO>
+					
+    SETA(#ValorMaximo, maxM(10,5,3,45,2));
+
+</COMANDO>
+```
+### ==minM( )==
+
+**Descrição:**
+
+Retorna o valor minimo em um conjunto até 5 parâmetros.
+
+**Parâmetros:**
+
+1.  Primeiro Valor
+2.  Segundo Valor
+3.  Terceiro Valor
+4.  Quarto Valor
+5.  Quinto Valor
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="minM( )"}
+
+<COMANDO>
+					
+    SETA(#ValorMinimo, minM(10,5,3,45,2));
+
+</COMANDO>
+```
 
 
 
