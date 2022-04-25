@@ -105,47 +105,91 @@ Esse conjunto de tags refere-se a proteção do capital principal, onde é deter
       
 ```
 
-### <*Comando*>
+### <*Comandos*> <*Comando*>
 
-Essa é a tag mais utilizada dentro da linguagem, nela irá conter todas as condições necessárias para poder adicionar ou não as ordens de compra ou venda de cada estratégia. 
+A TAG <*Comando*> é a mais utilizada dentro da linguagem, ele fica dentro da TAG <*Comandos*>, nela irá conter todas as condições necessárias para poder adicionar ou não as ordens de compra ou venda de cada estratégia. 
 A seguir um exemplo de uma estratégia: 
 
 ```{.py3 hl_lines="" linenums="70" title=""}
 
-<COMANDO>
+<COMANDOS>
+    <COMANDO>
 
-    Seta(#MAX, Maxima());
-    Seta(#VARIACAO, #MAX Minima() -);
-    
-    SE(
-        #VARIACAO 20 >
-    ENTAO
-        Seta(#GATILHO, 1);	
-    SENAO
-        Seta(#GATILHO, 0);
-    )
-    
-    SE(
-        #GATILHO 1 =
-    ENTAO
-        CorCandle(Azul)
-        ADICIONASTOP(
-            Ativo,
-            0$ 1 - CAPITALCORRENTE() *,
-            'COMPRA'POSICAOATUAL(),
-            POSICAOATUAL(),
-            Minima()/*STOP*/,
-            #MAX 12 +/*GAIN*/,
-            Fechamento()/*PRECO*/
-        );
-    SENAO
-        Seta(#GATILHO, 0);
-    )
+        Seta(#MAX, Maxima());
+        Seta(#VARIACAO, #MAX Minima() -);
 
-</COMANDO>
+        SE(
+            #VARIACAO 20 >
+        ENTAO
+            Seta(#GATILHO, 1);	
+        SENAO
+            Seta(#GATILHO, 0);
+        )
 
+        SE(
+            #GATILHO 1 =
+        ENTAO
+            CorCandle(Azul)
+            ADICIONASTOP(
+                Ativo,
+                0$ 1 - CAPITALCORRENTE() *,
+                'COMPRA'POSICAOATUAL(),
+                POSICAOATUAL(),
+                Minima()/*STOP*/,
+                #MAX 12 +/*GAIN*/,
+                Fechamento()/*PRECO*/
+            );
+        SENAO
+            Seta(#GATILHO, 0);
+        )
+
+    </COMANDO>
+</COMANDOS>
 ```
 
+
+### <*ComandoAdicionaSTOP*>
+
+### <*ComandoAjustaSTOP*>
+
+### <*ComandoZeraRISCO*>
+
+### <*ComandoAdicionaGATILHO*>
+
+### <*ComandoExecutaGATILHO*>
+
+### <*ComandoAbrePosicao*>
+
+### <*ComandoFechaPosicao*>
+### <*ComandoPontoINTERESSE*>
+
+
+
+
+
+
+
+
+
+
+
+
+
+### <*Naodesenha*>
+
+Sua funcionalidade é não plotar uma função na gráfico.
+
+```{.py3 hl_lines="" linenums="113" title=""}
+
+<NAODESENHA>
+
+    Minima()
+    maxima()
+    Fechamento()
+    
+</NAODESENHA>
+
+```
 ### <*ComandoFim*>
 
 O **Comando fim** é executado apenas no final da estratégia, utilizado normalmente para obter alguma informação específica no final do teste.
@@ -159,21 +203,15 @@ O **Comando fim** é executado apenas no final da estratégia, utilizado normalm
 </COMANDOFIM>
 
 ```
-### <*Naodesenha*>
 
-Sua funcionalidade é não plotar uma função na tela.
 
-```{.py3 hl_lines="" linenums="113" title=""}
+### <*Anotacao*>
 
-<NAODESENHA>
 
-    Minima()
-    maxima()
-    Fechamento()
-    
-</NAODESENHA>
+### <*Descricao*>
 
-```
+
+
 
 ## **Valores e tipos:**
 
