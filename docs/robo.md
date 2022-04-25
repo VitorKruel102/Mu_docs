@@ -7,62 +7,81 @@ LRB é uma linguagem de programação concebida por Luciano Wagner em 2008. A do
 ## **Tag de execução:**
 
 As estruturas da linguagem LRB, lembra muito a estruturua do HTLM, As tags são usadas para 
-informar ao sistema a estrutura do estratégia. A principal característica das tags é estarem 
-sempre dentro dos sinais de chevron (sinal de “maior que” e “menor que”), ou seja: inicializa com
-**< COMANDO >** e fecham com **</ COMANDO >**, assim delimitando o inicio e fim de cada estrutura.  
+informar ao sistema a estrutura da estratégia. A principal característica das tags são formadas 
+por sinais de chevron (sinal de “maior que” e “menor que”), ou seja: inicializa com
+**< COMANDO >** e fechadas com **</ COMANDO >**, assim delimitando o inicio e fim de cada estrutura.  
 
 **Nota:** ==Os nomes das estruturas são fixos, não podem ser substituidas por outras nomeclaturas.== 
 
 ## **Estrutura das tags:**
 
+### <*Estrategias*> <*Estrategia*> 
+É o inicio e o fim de toda a estrutura de backtest. Dentro da TAG <*Estrategias*>, podemos utilizar 
+vários conjuntos de TAGS <*Estrategia*> para formação dos istemas de operacionais.  
+
 ### <*Nome*> <*Capital*>
-As duas primeiras tags que vamos estudas são utilizados para nomear a estratégia e informar o capital inicial da carteira, por padrão utilizamos 100 milhões para fins de backtests.
+São utilizados para nomear a estratégia e informar o capital inicial da carteira, por padrão utilizamos 100 milhões para fins de backtest.
 
 ```{.py3 hl_lines="" linenums="4" title=""}
 
-<NOME> SNIPER_METODO1_13 </NOME>   /*Nome referente a estratégia.*/
+<NOME> SNIPER_MODELO_13 </NOME>    /*Nome referente a estrategia.*/
 
 <CAPITAL> 100000000 </CAPITAL>     /*Capital inicial da conta.*/
                   
 ```
 
+### <*ImpedeGenetico*>
+
+
 ### <*ComandoInicio*>
 
-O **Comando Inicio** é inicializado apenas no começo da estratégia, podemos utiliza-lo para determinar variáveis com o objetivo de serem
-parâmetros padrões para o restante da execução..
+O **Comando Inicio** é inicializado apenas no começo da estratégia, podemos utiliza-lo para determinar variáveis com o objetivo de serem parâmetros padrões para o restante da execução.
 
 ```{.py3 hl_lines="" linenums="8" title=""}
 
 <COMANDOINICIO>
 
-    SETA(#max_dia, maxima());
-    SETA(#min_dia,  minima());
-    SETA(#GATILHO, 0);	
+    SETA(#PERIODO_RSI, 20);
+    SETA(#INTERESSE, 5);
+    SETA(#GATILHO, 1);	
 
 </COMANDOINICIO>
                   
 ```
-
 ### <*Custos*>
 
 Essa tag é responsável por informar os custos/taxas das operações, são alterados conforme o tipo de ativo que está sendo estudado.
 
 ```{.py3 hl_lines="" linenums="16" title=""}
 
+/* AÇOES */
 <CUSTOS>
 
     <SLIPPAGE> 0.0001% </SLIPPAGE>
-    <CORRETAGEM> 1 </CORRETAGEM>
-    <EMOLUMENTOS> 0.0000019% </EMOLUMENTOS>
-    <REGISTRO> 0.0000008% </REGISTRO>
+    <CORRETAGEM> 0 </CORRETAGEM>
+    <EMOLUMENTOS> 0.0230% </EMOLUMENTOS>
+    <REGISTRO> 0.0050% </REGISTRO>
 
 </CUSTOS>
                   
 ```
 
+```{.py3 hl_lines="" linenums="16" title=""}
+
+/* AÇOES OPCOES - DAY TRADE */
+<CUSTOS>
+
+    <SLIPPAGE> 0.0001% </SLIPPAGE>
+    <CORRETAGEM> 0 </CORRETAGEM>
+    <EMOLUMENTOS> 0.0450% </EMOLUMENTOS>
+    <REGISTRO> 0.0140% </REGISTRO>
+
+</CUSTOS>
+     
+
 ### <*Periodo*>
 
-É o período preferencial da estratégia, mas não é necessário mudar todas as vezes que for estudar outros tempos gráficos, dentro do sistema ao selecionar um novo período no gráfico, ele mudará automaticamente.
+É o período preferencial da estratégia, mas não é necessário mudar todas as vezes que for estudar outros tempos gráficos, dentro do sistema conseguimos alterar para um novo período no gráfico, apenas *DIGITANDO* o novo período no gráfico e clicando *ENTER* o sistama mudará automaticamente.
 
 ```{.py3 hl_lines="" linenums="23" title=""}
 
