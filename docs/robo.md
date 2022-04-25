@@ -486,7 +486,7 @@ a quantidade de casas que permaneceram depois da vírgula.
 **Parâmetros:**
 
 1.  Valor decimal.
-1.  N° de casas de interesse.
+2.  N° de casas de interesse.
 
 **Sintaxe:**
 
@@ -499,7 +499,52 @@ a quantidade de casas que permaneceram depois da vírgula.
 </COMANDO>
 ```
 
+### ==ABS( )==
 
+**Descrição:**
+
+Retorna o valor absoluto de um valor. O valor absoluto de qualquer número se refere 
+a sua magnitude e não ao sinal que pode ter, seja ele positivo ou negativo ... 
+Em termos matemáticos, o valor absoluto é uma operação que permite qualquer número 
+tornar-se positivo.
+
+**Parâmetros:**
+
+1.  Valor ou expressão.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="ABS( )"}
+
+<COMANDO>
+					
+    SETA(#ValorABS, ABS(-50.5624 2 +));
+
+</COMANDO>
+```
+
+
+### ==Random( )==
+
+**Descrição:**
+
+Random é uma função matemática que retorna um número aleatório dentre o período
+escolhido.
+
+**Parâmetros:**
+
+1.  Periodo.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Random( )"}
+
+<COMANDO>
+					
+    SETA(#ValorAleatorio, Random(10));
+
+</COMANDO>
+```
 
 
 
