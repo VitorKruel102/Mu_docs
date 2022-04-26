@@ -860,43 +860,11 @@ Exemplos:
 
 
 
-
-
-
-
-
-
-
-## **Comentários:**
-### ==/comentario/==
-
-Conforme os programas ficam maiores e mais complexos, eles são mais difíceis de ler. As linguagens formais são densas e na maioria das vezes é díficil ver um pedaço de código e compreender o que ela faz ou por que utilizamos ela.
-
-Por essa razão, é uma boa ideia acrescentar notas aos seus programas para explicar em uma linguagem natural o que o programa está fazendo. Essas notas são chamadas de **comentários**, e começam com o símbolo barra e asterisco e terminam com asterisco e barra.
-
-
-```{.py3 hl_lines="" linenums="60" title="Seta( )"}
-
-<COMANDO>
-        
-    /*Estrategia XPS*/
-    
-    SETA(#FECHA, fechamento());  /*Fechamento atual*/
-    
-    . . .
-
-<COMANDO> 
-```
-
-
-
 ## **Definindo uma matriz:**
 
 **Descrição:**
 
-Uma matriz(vetores) é uma lista que aceita uma complexidade bem maior de operações e uma infinidade de métodos para utiliza-los. Uma matriz contém três tipos
-de vetores: X, Y e Z. Para definir uma matriz, é muito parecido para definir uma variável, utilizamos a mesma função, porém com algumas diferenças na hora 
-de atribuir um valor. Para cada valor atribuido, existe um indice específico.
+Uma matriz(vetores) é uma lista que aceita uma complexidade bem maior de operações e uma infinidade de métodos para utiliza-los. Uma matriz contém três tipos de vetores: X, Y e Z. Para definir uma matriz, é muito parecido para definir uma variável, utilizamos a mesma função, porém com algumas diferenças na hora de atribuir um valor. Para cada valor atribuido, existe um indice específico.
 
 **Parâmetros:**
 
@@ -942,11 +910,34 @@ Existe DUAS formas para determinar uma matriz:
 ## **Matrizes:**
 
 
+### ==Inicializa( )==
+
+**Descrição:**
+
+Utilizado para inicializar uma matriz, o segundo parametro é usado com () e dentro dele suporta até 50 parâmetros.
+
+**Parâmetros:**
+
+1.  **NOME_VARIAVEL_MATRIZ:** O nome da variavel que será criada.
+2.  **VALORES:** O nome da matriz.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="SomaMatriz( )"}
+
+<COMANDO>
+					
+   Inicializa(@prerotulosx, ('Cod', 'Dia', 'X', 'Venc', 'Uteis', 'Cal', 'Disp', 'DNeg')); 
+
+</COMANDO>
+```
+
+
 ### ==SomaMatriz( )==
 
 **Descrição:**
 
-Utilizado para somar os valores de dentro de uma matriz. Onde sua função é pegar a soma de uma matriz e atribuir dentro de uma variável.
+Utilizado para somar os valores de dentro de uma matriz. Onde sua função é pegar a soma de uma matriz e atribuir o valor dentro de uma variável.
 
 **Parâmetros:**
 
@@ -959,7 +950,7 @@ Utilizado para somar os valores de dentro de uma matriz. Onde sua função é pe
 
 <COMANDO>
 					
-   SomaMatriz(#Soma_da_matriz, #matriz);
+   SomaMatriz(#Retorna_soma_matriz, #matriz);
 
 </COMANDO>
 ```
@@ -984,6 +975,117 @@ Utilizado para zerar valores de uma matriz.
 
 </COMANDO>
 ```
+
+### ==GravaMatriz( )==
+
+**Descrição:**
+
+Utilizado para gravar a matriz dentro de um arquivo.
+
+**Parâmetros:**
+
+1.  **NOME_ARQUIVO:** O nome do arquivo.
+2.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
+3.  **X:** Número de colunas.
+4.  **Y:** Número de linhas.
+5.  **ROTULOX=:** Nome das colunas.
+6.  **ROTULOY=:** Nome das linhas.
+
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="GravaMatriz( )"}
+
+<COMANDO>
+					
+   GravaMatriz('opcoes.csv', #opcoesinteresse, 30, 5, ROTULOX=@ROTULOCOLUNAS, ROTULOY=@ROTULOLINHAS);
+
+</COMANDO>
+```
+
+### ==ConcatenaMatriz( )==
+
+**Descrição:**
+
+Utilizado para gravar uma matriz em um arquivo existente. 
+
+
+**Parâmetros:**
+
+1.  **NOME_ARQUIVO_EXISTENTE:** O nome do arquivo.
+2.  **NOME_VARIAVEL_MATRIZ:** O nome da matriz.
+3.  **X:** Número de colunas.
+4.  **Y:** Número de linhas.
+5.  **ROTULOX=:** Nome das colunas.
+6.  **ROTULOY=:** Nome das linhas.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="ConcatenaMatriz( )"}
+
+<COMANDO>
+					
+   ConcatenaMatriz('opcoes.csv', #opcoesinteresse, 30, 5, ROTULOX=@ROTULOCOLUNAS, ROTULOY=@ROTULOLINHAS);
+
+</COMANDO>
+```
+
+### ==VarMediana( )==
+
+**Descrição:**
+
+Utilizado para calcular a mediana de uma matriz. 
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="ConcatenaMatriz( )"}
+
+<COMANDO>
+					
+   ConcatenaMatriz('opcoes.csv', #opcoesinteresse, 30, 5, ROTULOX=@ROTULOCOLUNAS, ROTULOY=@ROTULOLINHAS);
+
+</COMANDO>
+```
+
+
+
+
+
+
+
+
+
+
+
+## **Comentários:**
+### ==/comentario/==
+
+Conforme os programas ficam maiores e mais complexos, eles são mais difíceis de ler. As linguagens formais são densas e na maioria das vezes é díficil ver um pedaço de código e compreender o que ela faz ou por que utilizamos ela.
+
+Por essa razão, é uma boa ideia acrescentar notas aos seus programas para explicar em uma linguagem natural o que o programa está fazendo. Essas notas são chamadas de **comentários**, e começam com o símbolo barra e asterisco e terminam com asterisco e barra.
+
+
+```{.py3 hl_lines="" linenums="60" title="Seta( )"}
+
+<COMANDO>
+        
+    /*Estrategia XPS*/
+    
+    SETA(#FECHA, fechamento());  /*Fechamento atual*/
+    
+    . . .
+
+<COMANDO> 
+```
+
+
+
+
 
 
 
