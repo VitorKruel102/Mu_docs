@@ -1034,7 +1034,7 @@ Utilizado para gravar uma matriz em um arquivo existente.
 
 **Descrição:**
 
-Utilizado para calcular a mediana de uma matriz. 
+Utilizado para calcular a **mediana** de uma matriz. 
 
 **Parâmetros:**
 
@@ -1043,21 +1043,228 @@ Utilizado para calcular a mediana de uma matriz.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ConcatenaMatriz( )"}
+```{.py3 hl_lines="" linenums="60" title="VarMediana( )"}
 
 <COMANDO>
 					
-   ConcatenaMatriz('opcoes.csv', #opcoesinteresse, 30, 5, ROTULOX=@ROTULOCOLUNAS, ROTULOY=@ROTULOLINHAS);
+   SETA(#MEDIANA_MATRIZ, VarMediana(#opcoesinteresse));
 
 </COMANDO>
 ```
 
 
+### ==VarMedia( )==
+
+**Descrição:**
+
+Utilizado para calcular a **média** de uma matriz. 
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="VarMedia( )"}
+
+<COMANDO>
+					
+   SETA(#MEDIA_MATRIZ, VarMedia(#opcoesinteresse));
+
+</COMANDO>
+```
+
+### ==Var1Quartil( )==
+
+**Descrição:**
+
+Retorna o **valor aproximado de 25%** de toda a matriz.
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Var1Quartil( )"}
+
+<COMANDO>
+					
+   SETA(#25_MATRIZ, Var1Quartil(#opcoesinteresse));
+
+</COMANDO>
+```
+
+### ==Var3Quartil( )==
+
+**Descrição:**
+
+Retorna o **valor aproximado de 75%** de toda a matriz.
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Var3Quartil( )"}
+
+<COMANDO>
+					
+   SETA(#75_MATRIZ, Var3Quartil(#opcoesinteresse));
+
+</COMANDO>
+```
+
+### ==Varconta( )==
 
 
 
+### ==VarDesvio( )==
+
+**Descrição:**
+
+Retorna o **desvio padrão** do conjunto de dados na matriz. 
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
 
 
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="VarDesvio( )"}
+
+<COMANDO>
+					
+   SETA(#desvio_MATRIZ, VarDesvio(#opcoesinteresse));
+
+</COMANDO>
+```
+
+
+### ==VarMaxima( )==
+
+**Descrição:**
+
+Retorna o valor **máximo** do conjunto de dados na matriz. 
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="VarMaxima( )"}
+
+<COMANDO>
+					
+   SETA(#maximo_MATRIZ, VarMaxima(#opcoesinteresse));
+
+</COMANDO>
+```
+
+
+### ==VarMaxima( )==
+
+**Descrição:**
+
+Retorna o valor **máximo** do conjunto de dados na matriz. 
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="VarMaxima( )"}
+
+<COMANDO>
+					
+   SETA(#maximo_MATRIZ, VarMaxima(#opcoesinteresse));
+
+</COMANDO>
+```
+### ==RemoveMatriz( )==
+
+**Descrição:**
+
+Utilizado para **remover** a matriz do código. 
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="RemoveMatriz( )"}
+
+<COMANDO>
+					
+   RemoveMatriz(#opcoesinteresse);
+
+</COMANDO>
+```
+
+### ==Ordena( )==
+
+**Descrição:**
+
+Utilizado para **ordenar** a matriz.
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ_DESTINO:** O nome da matriz.
+2.  **NOME_MATRIZ_ORIGEM:** O nome da matriz.
+3.  
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Ordena( )"}
+
+<COMANDO>
+					
+   Ordena(#MATRIZ_DESTINO, #MATRIZ_ORIGEM);
+
+</COMANDO>
+```
+
+### ==UnificaMatriz( )==
+### ==FiltraMatriz( )==
+### ==EscalaMatriz( )==
+
+
+### ==CardinalidadeIndice( )==
+
+**Descrição:**
+
+Utilizado para retornar o **número de indices** em uma matriz.
+
+**Parâmetros:**
+
+1.  **NOME_MATRIZ:** O nome da matriz.
+2.  
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="CardinalidadeIndice( )"}
+
+<COMANDO>
+					
+   CardinalidadeIndice(#MATRIZ_DESTINO, x);
+
+</COMANDO>
+```
+
+
+### ==MapeiaMatriz( )==
+### ==MinimoMapeiaMatriz( )==
+### ==MaximoMapeiaMatriz( )==
+### ==VarSQN( )==
+### ==Moda( )==
 
 
 
