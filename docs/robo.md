@@ -2415,11 +2415,15 @@ Calcula o volume financeiro negociado no período desejado.
 ```
 
 ## **Período de Estudo:**
+
 ### ==Agora( )==
 
 **Descrição:**
 
-Utilizado para estudar um período específico. Não é necessário preencher todos os parâmetros, se caso não necessite de um parâmeto, utiliza um espaço em branco para ignorar.
+Utilizado para estudar um período específico. Não é necessário preencher todos os parâmetros, 
+se caso não necessite de um parâmeto, utiliza um espaço em branco para ignorar. 
+
+Ele retorna 1 se for verdadeiro e 0 para falso.
 
 **Parâmetros:**
 
@@ -2437,7 +2441,7 @@ Utilizado para estudar um período específico. Não é necessário preencher to
 <COMANDO>
 
     SE(
-        Agora( , , 15, , , );
+        Agora(,,15,,,) 1 =
     ENTAO
         Loga('Dia 15');
     SENAO
@@ -2450,11 +2454,7 @@ Utilizado para estudar um período específico. Não é necessário preencher to
 
 **Descrição:**
 
-Utilizado para estudar um **ANO** específico.
-
-**Parâmetros:**
-
-1.  **ANO**  
+Retorna o **ano atual**.
 
 **Sintaxe:**
 
@@ -2463,7 +2463,7 @@ Utilizado para estudar um **ANO** específico.
 <COMANDO>
 
     SE(
-        Ano(2020);
+        Ano() 2020 =
     ENTAO
         Loga('Ano 2020');
     SENAO
@@ -2476,11 +2476,8 @@ Utilizado para estudar um **ANO** específico.
 
 **Descrição:**
 
-Utilizado para estudar um **MES** específico.
+Retorna o **mês atual**.
 
-**Parâmetros:**
-
-1.  **MES**  
 
 **Sintaxe:**
 
@@ -2489,7 +2486,7 @@ Utilizado para estudar um **MES** específico.
 <COMANDO>
 
     SE(
-        MES(2);
+        MES() 2
     ENTAO
         Loga('Fevereiro');
     SENAO
@@ -2502,11 +2499,7 @@ Utilizado para estudar um **MES** específico.
 
 **Descrição:**
 
-Utilizado para estudar um **DIA** específico.
-
-**Parâmetros:**
-
-1.  **DIA**  
+Retorna o **dia atual**.
 
 **Sintaxe:**
 
@@ -2515,7 +2508,7 @@ Utilizado para estudar um **DIA** específico.
 <COMANDO>
 
     SE(
-        DIA(20);
+        DIA() 20 =
     ENTAO
         Loga('Dia 20');
     SENAO
@@ -2528,11 +2521,7 @@ Utilizado para estudar um **DIA** específico.
 
 **Descrição:**
 
-Utilizado para estudar um **Hora** específico.
-
-**Parâmetros:**
-
-1.  **HORA**  
+Retorna o **hora atual**.
 
 **Sintaxe:**
 
@@ -2541,7 +2530,7 @@ Utilizado para estudar um **Hora** específico.
 <COMANDO>
 
     SE(
-        Hora(9)
+        Hora() 9 =
     ENTAO
         Loga('Horario de abertura');
     SENAO
@@ -2554,11 +2543,7 @@ Utilizado para estudar um **Hora** específico.
 
 **Descrição:**
 
-Utilizado para estudar um **Minuto** específico.
-
-**Parâmetros:**
-
-1.  **MINUTO**  
+Retorna o **minuto atual**.
 
 **Sintaxe:**
 
@@ -2567,7 +2552,7 @@ Utilizado para estudar um **Minuto** específico.
 <COMANDO>
 
     SE(
-        Minuto(50)
+        Minuto() 50 =
     ENTAO
         Loga('Minuto 50');
     SENAO
@@ -2580,11 +2565,7 @@ Utilizado para estudar um **Minuto** específico.
 
 **Descrição:**
 
-Utilizado para estudar um **Segundo** específico.
-
-**Parâmetros:**
-
-1.  **SEGUNDO**  
+Retorna o **segundo atual**.
 
 **Sintaxe:**
 
@@ -2593,7 +2574,7 @@ Utilizado para estudar um **Segundo** específico.
 <COMANDO>
 
     SE(
-        Segundo(10)
+        Segundo() 10 =
     ENTAO
         Loga('Segundo 10');
     SENAO
@@ -2606,11 +2587,7 @@ Utilizado para estudar um **Segundo** específico.
 
 **Descrição:**
 
-Segundos a partir da meia noite.
-
-**Parâmetros:**
-
-1.  **SEGUNDOS**  
+Retorna o **segundo do dia**.
 
 **Sintaxe:**
 
@@ -2619,7 +2596,7 @@ Segundos a partir da meia noite.
 <COMANDO>
 
     SE(
-        SegundosDia(1520)
+        SegundosDia() 1520 =
     ENTAO
         Loga('Segundos 1520');
     SENAO
@@ -2632,7 +2609,7 @@ Segundos a partir da meia noite.
 
 **Descrição:**
 
-Segundos desde a abertura.
+Retornar os segundos desde a abertura.
 
 **Sintaxe:**
 
@@ -2649,7 +2626,7 @@ Segundos desde a abertura.
 
 **Descrição:**
 
-Tempo do fechamento candle atual.
+Tempo do fechamento candle atual. Retorna no formato **'HHMMSS'**.
 
 **Sintaxe:**
 
@@ -2666,7 +2643,7 @@ Tempo do fechamento candle atual.
 
 **Descrição:**
 
-Tempo do inicio candle atual.
+Tempo do abertura candle atual. Retorna no formato **'HHMMSS'**.
 
 **Sintaxe:**
 
@@ -2683,11 +2660,7 @@ Tempo do inicio candle atual.
 
 **Descrição:**
 
-Utilizado para estudar um **DIA** específico desde de 1970.
-
-**Parâmetros:**
-
-1.  **DIA**  
+Retorna o dia atual somando os dias desde 1970.
 
 **Sintaxe:**
 
@@ -2696,7 +2669,7 @@ Utilizado para estudar um **DIA** específico desde de 1970.
 <COMANDO>
 
     SE(
-        DiaDesde1970(10000)
+        DiaDesde1970() 10000 =
     ENTAO
         Loga('Dia escolhido');
     SENAO
@@ -2705,46 +2678,6 @@ Utilizado para estudar um **DIA** específico desde de 1970.
 </COMANDO>
 
 ```
-### ==DiaExercicioOpcoes( )==
-
-**Descrição:**
-
-Verifica 0 se for dia normal ou retorna 1 se for dia de opções.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="DiaExercicioOpcoes( )"}
-
-<COMANDO>
-
-    SE(
-        DiaExercicioOpcoes() 0 =
-    ENTAO
-        Loga('Dia de opções');
-    SENAO
-    )
-
-</COMANDO>
-
-```
-### ==DiasParaExercicio( )==
-
-**Descrição:**
-
-Verifica 0 se for dia opções ou retorna quantos dias faltam para as opções.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="DiasParaExercicio( )"}
-
-<COMANDO>
-
-    SETA(#DIAS_PARA_OPCOES, DiasParaExercicio());
-
-</COMANDO>
-
-```
-
 ### ==DiaSemana( )==
 
 **Descrição:**
@@ -2783,7 +2716,7 @@ Verifica é dia da semana.
 
 **Descrição:**
 
-Verifica 0 se não for o último candle ou retorna 1 se for o último candle do dia.
+Retorna 0 se não for o último candle ou retorna 1 se for o último candle do dia.
 
 **Sintaxe:**
 
@@ -2799,8 +2732,139 @@ Verifica 0 se não for o último candle ou retorna 1 se for o último candle do 
     )
 
 </COMANDO>
-
 ```
+
+### ==DiasMes( )==
+### ==DMA( )==
+
+### ==DMAF( )==
+
+### ==DMAHMS( )==
+
+### ==MDA( )==
+
+### ==AMDC( )==
+
+### ==DMASHM( )==
+
+### ==CandleFechaPeriodo( )==
+
+**Descrição:**
+
+Retorna 0 se não for o candle que fecha o periodo ou retorna 1 se for o candle fecha.
+
+**Parâmetros:**
+
+1.  **Periodo_de_interesse:** Posição para a reversão.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="CandleFechaPeriodo( )"}
+
+<COMANDO>
+
+    SE(
+        CandleFechaPeriodo(30) 1 =
+    ENTAO
+        Loga('Fim Dia');
+    SENAO
+    )
+
+</COMANDO>
+```
+
+### ==FIMAMD( )==
+
+### ==TempoFimOutro( )==
+
+### ==TempoInicioOutro( )==
+
+### ==SegundoFimDia( )==
+**Descrição:**
+
+Retorna o segundo exato do fim do dia.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="SegundoFimDia( )"}
+
+<COMANDO>
+
+    SE(
+        SegundoFimDia() 7200 =
+    ENTAO
+        Loga('ok');
+    SENAO
+    )
+
+</COMANDO>
+```
+
+### ==TradeTempo( )==
+### ==TerceiraSegunda( )==
+
+**Descrição:**
+
+Retorna 0 se não for a terceira segunda do mes ou retorna 1 se for a terceira segunda.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="TerceiraSegunda( )"}
+
+<COMANDO>
+
+    SE(
+        TerceiraSegunda() 1 =
+    ENTAO
+        Loga('Terceira Segunda');
+    SENAO
+    )
+
+</COMANDO>
+```
+### ==DiasUteisParaTerceiraSegunda( )==
+
+**Descrição:**
+
+Retorna os dias úteis que faltam até a terceira segunda do mês.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="DiasUteisParaTerceiraSegunda( )"}
+
+<COMANDO>
+
+    SE(
+        DiasUteisParaTerceiraSegunda() 5 =
+    ENTAO
+        Loga('Falta 5 dias para a terceira segunda do mês');
+    SENAO
+    )
+
+</COMANDO>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Reversão:**
 ### ==AdicionaPontoInteresse( )==
 
@@ -3193,6 +3257,97 @@ Sua função é retornar todas as informações relevantes de uma opção espec�
 
 </ComandoPontoInteresse>
 ```
+
+
+### ==DiaExercicioOpcoes( )==
+
+**Descrição:**
+
+Verifica 0 se for dia normal ou retorna 1 se for dia de opções.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="DiaExercicioOpcoes( )"}
+
+<COMANDO>
+
+    SE(
+        DiaExercicioOpcoes() 1 =
+    ENTAO
+        Loga('Dia de opções');
+    SENAO
+    )
+
+</COMANDO>
+
+```
+### ==DiasParaExercicio( )==
+
+**Descrição:**
+
+Verifica 0 se for dia opções ou retorna quantos dias faltam para as opções.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="DiasParaExercicio( )"}
+
+<COMANDO>
+
+    SETA(#DIAS_PARA_OPCOES, DiasParaExercicio());
+
+</COMANDO>
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Teste de Consistência:**
 
 O **teste de consistência** tem como principal objetivo criar condições para testar todas as funções com o objetivo de ter um controle se todas as funções estão ou não funcionando perfeitamente, mesmo se ocorra atualizações no sistema. Vamos apresentar todas as tags que compõem a estrutura de testes. O arquivo que será utilizado esta no diretório Debug na pasta *TESTE DE CONSISTENCIA* e o nome do arquivo é ***testes.estr***.
