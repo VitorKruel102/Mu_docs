@@ -2844,25 +2844,43 @@ Retorna os dias úteis que faltam até a terceira segunda do mês.
 </COMANDO>
 ```
 
+## **Break:**
 
 
+### ==EncerraAvaliacao( )==
+
+**Descrição:**
 
 
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="EncerraAvaliacao( )"}
+
+<COMANDO>
 
 
+</COMANDO>
+```
 
+### ==EncerraParaCada( )==
 
+**Descrição:**
 
+Utilizado para anular alguma parte da função PARACADA().
 
+**Sintaxe:**
 
+```{.py3 hl_lines="" linenums="60" title="EncerraAvaliacao( )"}
 
+<COMANDO>
 
+    PARACADA(dados EM #teste FACA
+        SETA(#SOMA, 1 1 +)
+        EncerraParaCada()
+    )
 
-
-
-
-
-
+</COMANDO>
+```
 
 
 ## **Reversão:**
