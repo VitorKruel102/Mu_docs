@@ -618,6 +618,48 @@ Retorna o valor minimo em um conjunto até 5 parâmetros.
 </COMANDO>
 ```
 
+### ==Media( )==
+
+**Descrição:**
+
+Utilizado para calcular as médias.
+
+**Parâmetros:**
+
+1.  **MEDIA:** Determina o período da Média Longa para formação do cálculo.
+ 
+|Medias               |
+|                     |
+|A = Aritmética       |                  
+|W = Welles Wilder    |     
+|E = Exponencial      |     
+
+2.  **EXPRESSÃO:**  Expressão que será calculado a média.
+3.  **PERÍODO:** Período que será a média.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Media( )"}
+
+<COMANDO>
+					
+    Grafico(Media(A, Fechamento(), 200));
+    
+</COMANDO>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Conversor:**
 
 ### ==Valor( )==
@@ -640,6 +682,39 @@ Utilizado para converter um texto númerico para número.
 
 </COMANDO>
 ```
+
+### ==Estatistica( )==
+
+**Descrição:**
+
+Utilizado para fazer um relatório básico de estatística
+
+**Parâmetros:**
+
+1.  Matriz.
+2.  Indice.(opcional)
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Estatistica( )"}
+
+<COMANDO>
+					
+    Estatistica(#ConverteTexto);
+
+</COMANDO>
+```
+
+
+
+
+
+
+
+
+
+
+
 
 ## **Determinar variáveis:**
 ### ==Seta()==
@@ -1265,7 +1340,28 @@ Utilizado para retornar o **número de indices** em uma matriz.
 ### ==MaximoMapeiaMatriz( )==
 ### ==VarSQN( )==
 ### ==Moda( )==
+### ==Piece( )==
 
+**Descrição:**
+
+Utilizado retornar um indice de uma matriz.
+
+**Parâmetros:**
+
+1.  **Indice**.
+2.  **Matriz**.
+
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Ordena( )"}
+
+<COMANDO>
+					
+   Ordena(#MATRIZ_DESTINO, #MATRIZ_ORIGEM);
+
+</COMANDO>
+```
 
 
 
@@ -1290,6 +1386,11 @@ Por essa razão, é uma boa ideia acrescentar notas aos seus programas para expl
 <COMANDO> 
 ```
 
+### ==Anotacao( )==
+
+
+
+
 
 
 
@@ -1305,13 +1406,13 @@ Por essa razão, é uma boa ideia acrescentar notas aos seus programas para expl
 
 **Descrição:**
 
-Um loop parecido com o *FOR*. A instrução de loop ***ParaCada*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do inicio da matriz para o final, utilizamos essa função para **NÚMEROS**.
+Um loop parecido com o *FOR*. A instrução de loop ***ParaCada*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do inicio da matriz para o final, utilizamos essa função para **NÚMEROS** ou **STRINGS**.
 
 
 **Parâmetros:**
 
 1. **NOME_QUALQUER:** É um nome qualquer que será relacionado aos itens da matriz. 
-2. **MATRIX** 
+2. **MATRIZ** 
 
 **Sintaxe:**
 
@@ -1336,13 +1437,11 @@ Exemplo 01:
         )
     );
 
-    ParaCada(laranja EM #NOME_VARIAVEL FACA
+    ParaCada(laranja EM @NOME_VARIAVEL FACA
         SE(
-            laranja 3 =
+            laranja 'ABEV3' =
         ENTAO
-            SETA(#VALOR_VALIDO, laranja)
-        SENAO
-            Seta(#VALOR_INVALIDO, 1)
+            SETA(#STRING_VALIDO, laranja)
         )
     );
 
@@ -1366,7 +1465,8 @@ Exemplo 02:
 
 **Descrição:**
 
-A função range() permite especificar o início de uma sequência e o final. Uma das suas funcionalidades é atribuir valores sequenciais em matrizes
+A função range() permite especificar o início de uma sequência e o final. 
+Uma das suas funcionalidades é atribuir valores sequenciais em matrizes
 
 **Parâmetros:**
 
@@ -1410,7 +1510,7 @@ Um loop parecido com o *FOR*. A instrução de loop ***ParaCadaINV*** necessita 
 **Parâmetros:**
 
 1. *NOME_QUALQUER:* É um nome qualquer que será relacionado aos itens da matriz. 
-2. *MATRIX* 
+2. *MATRIZ* 
 
 **Sintaxe:**
 
@@ -1451,81 +1551,7 @@ Exemplo 02:
 
 ```
 
-### ==ParaCadaTEXTO( )==
 
-**Descrição:**
-
-Um loop parecido com o *FOR*.  A instrução de loop ***ParaCadaTEXTO*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do inicio da matriz para o final, utilizamos essa função para **TEXTOS**.
-
-**Parâmetros:**
-
-1. *NOME_QUALQUER:* É um nome qualquer que será relacionado aos itens da matriz. 
-2. *MATRIX* 
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="ParaCadaTEXTO( )"}
-
-Exemplo 01:
-
-<COMANDO>
-        
-    SETA(@NOME_VARIAVEL(FIM), 'Válido'); 
-    SETA(@NOME_VARIAVEL(FIM), 'Válido');
-    SETA(@NOME_VARIAVEL(FIM), 'InVálido');
-
-
-    ParaCadaTEXTO(analise EM @NOME_VARIAVEL FACA
-        SE(
-            analise 'Válido' =
-        ENTAO
-            SETA(#Valor_valido, 1)
-        SENAO
-            SETA(#Valor_in, 1)
-        )
-    );
-
-<COMANDO
-
-```
-
-### ==ParaCadaTEXTOInv( )==
-
-**Descrição:**
-
-Um loop parecido com o *FOR*.  A instrução de loop ***ParaCadaTEXTO*** necessita de um conjunto de dados, bem como o incremento para cada iteração. Começando do final da matriz para o inicio, utilizamos essa função para **TEXTOS**.
-
-**Parâmetros:**
-
-1. *NOME_QUALQUER:* É um nome qualquer que será relacionado aos itens da matriz. 
-2. *MATRIX* 
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="ParaCadaTEXTOInv( )"}
-
-Exemplo 01:
-
-<COMANDO>
-        
-    SETA(@NOME_VARIAVEL(FIM), 'valído'); 
-    SETA(@NOME_VARIAVEL(FIM), 'valído');
-    SETA(@NOME_VARIAVEL(FIM), 'valído');
-
-
-    ParaCadaTEXTOInv(analise EM @NOME_VARIAVEL FACA
-        SE(
-            analise 'valído' =
-        ENTAO
-            SETA(#Valor_valido, 1)
-        SENAO
-            SETA(#Valor_in, 1)
-        )
-    );
-
-<COMANDO
-
-```
 ## **Escrever observações:**
 ### ==Loga( )==
 
@@ -1683,84 +1709,37 @@ Podemos utilizar esta função para analisar todas as variaveis que foram altera
 
 <COMANDOFIM> 
 ```
-### ==BreakPoint( )==
 
-**Descrição:**
+### ==LogaParcial( )==
+### ==LogaHTML( )==
 
-Ela é responsável por analisar processos, o resultado será colocado no arquivo **BreakPoints.txt** no diretório Debug.
 
-**Parâmetros:**
 
-1.  **EXPRESSÃO -** É a expressão que precisa ser analisada.
 
-**Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="BreakPoint( )"}
 
-<COMANDO>
-					
-    BreakPoint(
-                
-        SE(
-            MAXIMA() FECHAMENTO() !=
-        ENTAO
-            SETA(#numero_candle, 1);
-            SETA(#numero_dia, #numero_candle);
-        SENÃO
-            SETA(#numero_candle, 0);
-
-        )		
-    );
-
-</COMANDO>
-
-```
-
-### ==CandleFechaPeríodo( )==
-
-**Descrição:**
-
-Retorna se o fechamento do período atual é o mesmo do fechamento do parâmetro. Vai retornar 0 se for diferente do fechamento do tempo gráfico ou vai retornar 1 se for o fechamento for igual ao parâmetro informado.
-
-**Parâmetros:**
-
-1.  **TEMPO:** Perido gráfico.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="CandleFechaPeríodo( )"}
-
-<COMANDO>
-
-    SE(
-        CandleFechaPeríodo(10)      /*Perguntando se o fechamento atual também é o fechamento do candle de 10 minutos.*/
-    ENTAO
-        CorCandle(Laranja);
-    SENAO
-    )        			
-     
-</COMANDO>
-```
 
 
 ## **Condicionais e recursividade:**
 
-O tópico principal deste capítulo é a função **SE( )**, que executa códigos diferentes depenendo do estado do programa. Mas primeiro quero apresentar as expressões booleana.
+O tópico principal deste capítulo é a função **SE( )**, que executa códigos diferentes 
+depenendo do estado do programa. Mas primeiro quero apresentar as expressões booleana.
 
 ### **Expressões booleana**
 
-Uma **expressão booleana** é uma expressão que pode ser verdadeira ou falsa. Os exemplos seguintes usam o operador =, que compara dois operadores.
+Uma **expressão booleana** é uma expressão que pode ser verdadeira ou falsa. Os exemplos 
+seguintes usam o operador =, que compara dois operadores.
 
 ```{.py3 hl_lines="" linenums="60" title=""}
 
 <COMANDO>
 					
-    Se( 
-        5 4 =    /*Se essa condição for verdadeira*/
+    SE( 
+        5 4 =                   /*Se essa condição for verdadeira*/
     ENTAO
-        Loga('Verdadeiro');   /*Então mostrará verdadeiro*/
+        Loga('Verdadeiro');     /*Então mostrará verdadeiro*/
     SENAO
-        Loga('Falso');   /*Se for falso, mostrará falso*/
+        Loga('Falso');          /*Se for falso, mostrará falso*/
     )
 
 </COMANDO>
@@ -1783,11 +1762,16 @@ O operador = é um dos **operadores relacionais**, os outros são:
 
 **Descrição:**
 
-É a base das condicionais, onde o objetivo da função é analisar uma expressão e determinar se ela é verdadeira ou falsa, dependendo da resposta ela direcionará para dois caminhos, se for verdadeira, irá para o caminho do ***ENTAO***, se for falsa irá para o caminho do ***SENAO**(*OPICIONAL*).
+É a base das condicionais, onde o objetivo da função é analisar uma expressão 
+e determinar se ela é verdadeira ou falsa, dependendo da resposta ela direcionará 
+para um caminho, se for verdadeira, irá para o caminho do ***ENTAO***, se for falsa 
+irá para o caminho do ***SENAO**(*OPICIONAL*).
 
 **Parâmetros:**
 
 1.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+2.  **ENTAO:** Algo a ser feito se a confição for verdadeira.
+3.  **SENAO:** Algo a ser feito se a confição for falsa.
 
 **Sintaxe:**
 
@@ -1809,7 +1793,9 @@ O operador = é um dos **operadores relacionais**, os outros são:
 
 **Descrição:**
 
-É utilizado dentro da função **SE( )**, retorna verdadeiro quando todos os parâmetros passados forem verdadeiros e falso se caso um dos paâmetros for falso. Ele suporte até 5 parâmetros.
+É utilizado dentro da função **SE( )**, retorna verdadeiro quando todos 
+os parâmetros passados forem verdadeiros e falso se caso um dos parâmetros 
+forem falsos. Ele suporte até 6 parâmetros.
 
 **Parâmetros:**
 
@@ -1818,6 +1804,7 @@ O operador = é um dos **operadores relacionais**, os outros são:
 3.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
 4.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
 5.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+6.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
 
 **Sintaxe:**
 
@@ -1867,11 +1854,14 @@ Exemplo 02:
 
 **Descrição:**
 
-É utilizado dentro da função **SE( )**, Utilizado para retornar verdadeiro quando o parâmetro for falso e verdadeiro quando for falso.
+É utilizado dentro da função **SE( )**, direcionará para o **ENTAO** 
+se o parâmetro passado for falso e irá direcionar para o **SENAO** se
+o parâmetro for verdadeiro.
 
 **Parâmetros:**
 
-1. **EXPRESSÃO:** Uma condição que deverá ser analisada.
+1.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+
 
 **Sintaxe:**
 
@@ -1891,6 +1881,78 @@ Exemplo 02:
 </COMANDO>
 
 ```
+
+### ==OU( )==
+
+**Descrição:**
+
+É utilizado dentro da função **SE( )**, retorna verdadeiro quando um 
+dos parâmetros passados forem verdadeiros e falso se caso todos os parâmetros 
+forem falsos. Ele suporte até 6 parâmetros.
+
+**Parâmetros:**
+
+1.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+2.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+3.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+4.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+5.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+6.  **EXPRESSÃO:** Uma condição que deverá ser analisada.
+
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="NAO( )"}
+
+<COMANDO>
+					
+    SE(
+        NAO(
+            Fechamento() Maxima() =
+        )    
+    ENTAO
+        CorCandle(Marrom);
+    SENAO          
+    )
+
+</COMANDO>
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Indicadores:**
 ### ==ADX( )==
 
@@ -1956,8 +2018,8 @@ de média desejados.
     Grafico(Bollinger(20, 1, 2));
 
 </COMANDO>
-
 ```
+
 ### ==Hilo( )==
 
 **Descrição:**
@@ -2029,35 +2091,7 @@ desejados.
 </COMANDO>
 
 ```
-### ==Media( )==
 
-**Descrição:**
-
-Utilizado para calcular as médias.
-
-**Parâmetros:**
-
-1.  **MEDIA:** Determina o período da Média Longa para formação do cálculo.
- 
-|Medias               |
-|                     |
-|A = Aritmética       |                  
-|W = Welles Wilder    |     
-|E = Exponencial      |     
-
-2.  **EXPRESSÃO:**  Expressão que será calculado a média.
-3.  **PERÍODO:** Período que será a média.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Media( )"}
-
-<COMANDO>
-					
-    Grafico(Media(A, Fechamento(), 200));
-    
-</COMANDO>
-```
 ### ==MMA( )==
 
 **Descrição:**
@@ -2125,6 +2159,7 @@ A função Média retorna o valor do indicador Média Móvel, welles wilder.
 </COMANDO>
 
 ```
+
 ### ==OBV( )==
 
 **Descrição:**
@@ -2151,6 +2186,10 @@ A função OnBalanceTR retorna o valor do indicador On-Balance True Range.
 **Sintaxe:**
 
 ```{.py3 hl_lines="" linenums="60" title="OBTR( )"}
+
+**Parâmetros:**
+
+1.  **PERÍODO:**  Período utilizado no momento do cálculo do indicador.
 
 <COMANDO>
 					
@@ -2181,15 +2220,17 @@ A função **RSI** retorna o valor do indicador **IFR(RSI)**, de acordo com o pe
 </COMANDO>
 
 ```
-### ==Estocastico( )==
+### ==Stocastico( )==
 
 **Descrição:**
 
-A função **SlowStochastic** retorna o valor do indicador **Estocástico Lento**, de acordo com o período desejado.
+A função **SlowStochastic** retorna o valor do indicador **Estocástico Lento**, 
+de acordo com o período desejado.
 
 **Parâmetros:**
 
 1.  **PERÍODO:**  Período utilizado no momento do cálculo do indicador.
+2. 
 
 **Sintaxe:**
 
@@ -2330,8 +2371,50 @@ Calcula o volume financeiro negociado no período desejado.
 </COMANDO>
 
 ```
+
+### ==VolumeHistorico( )==
+
+**Descrição:**
+
+Calcula o volume historico negociado no período desejado.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Volume( )"}
+
+<COMANDO>
+					
+    Anterior(1, Volume());
+    
+</COMANDO>
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Cruzamento:**
-### ==CruzaBaixo( )==
+### ==CruzaABaixo( )==
 
 **Descrição:**
 
@@ -2359,7 +2442,7 @@ Calcula o volume financeiro negociado no período desejado.
 </COMANDO>
 
 ```
-### ==CruzaCima( )==
+### ==CruzaACima( )==
 
 **Descrição:**
 
@@ -2413,6 +2496,44 @@ Calcula o volume financeiro negociado no período desejado.
 </COMANDO>
 
 ```
+
+
+### ==CruzaQUALQUER( )==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## **Adicionar funcoes no gráfico:**
+
+### ==Linha( )==
+
+### ==Grafico( )==
+
+### ==AdicionaMarcador( )==
+
+### ==Desenha( )==
+
+### ==Plota( )==
+
+
+
+
+
+
 
 ## **Período de Estudo:**
 
@@ -2735,6 +2856,30 @@ Retorna 0 se não for o último candle ou retorna 1 se for o último candle do d
 ```
 
 ### ==DiasMes( )==
+**Descrição:**
+
+Retorna quantos dias tem o mês
+
+**Parâmetros:**
+
+1.  **ANO**.
+1.  **MES**.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="FimDia( )"}
+
+<COMANDO>
+
+    SE(
+        FimDia() 1 =
+    ENTAO
+        Loga('Fim Dia');
+    SENAO
+    )
+
+</COMANDO>
+```
 ### ==DMA( )==
 
 ### ==DMAF( )==
@@ -2772,14 +2917,11 @@ Retorna 0 se não for o candle que fecha o periodo ou retorna 1 se for o candle 
 
 </COMANDO>
 ```
-
-### ==FIMAMD( )==
-
+### ==FimAMD( )==
 ### ==TempoFimOutro( )==
-
 ### ==TempoInicioOutro( )==
-
 ### ==SegundoFimDia( )==
+
 **Descrição:**
 
 Retorna o segundo exato do fim do dia.
@@ -2883,6 +3025,50 @@ Utilizado para anular alguma parte da função PARACADA().
 ```
 
 
+### ==BreakPoint( )==
+
+**Descrição:**
+
+Ela é responsável por analisar processos, o resultado será colocado no arquivo **BreakPoints.txt** no diretório Debug.
+
+**Parâmetros:**
+
+1.  **EXPRESSÃO -** É a expressão que precisa ser analisada.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="BreakPoint( )"}
+
+<COMANDO>
+					
+    BreakPoint(
+                
+        SE(
+            MAXIMA() FECHAMENTO() !=
+        ENTAO
+            SETA(#numero_candle, 1);
+            SETA(#numero_dia, #numero_candle);
+        SENÃO
+            SETA(#numero_candle, 0);
+
+        )		
+    );
+
+</COMANDO>
+
+```
+### ==BreakPointSE( )==
+
+
+
+
+
+
+
+
+
+
+
 ## **Reversão:**
 ### ==AdicionaPontoInteresse( )==
 
@@ -2907,20 +3093,21 @@ esse função é necessário colocar dentro do campo **<*ComandoPontoInteresse*>
 
 ```
 ## **Posições:**
-### ==Identificador( )==
+
+### ==IdentificadorPosicao( )==
 
 **Descrição:**
 
-Identifica o ID da posição.
+Retorna o ID da posição.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="Identificador( )"}
+```{.py3 hl_lines="" linenums="60" title="IdentificadorPosicao( )"}
 
 <COMANDO>
             
     SE(
-        Identificador() 1 =
+        IdentificadorPosicao() 1 =
         
         E(
             FimDia() 1 =
@@ -2933,27 +3120,8 @@ Identifica o ID da posição.
 </COMANDO>
 
 ```
-### ==SaldoEquity( )==
 
-**Descrição:**
 
-Informa o valor em dinheiro disponível na conta.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="SaldoEquity( )"}
-
-<COMANDO>
-            
-    SE(
-        FimDia() 1 =
-    ENTAO
-        Loga(SaldoEquity());
-    )
-
-</COMANDO>
-
-```
 ### ==SaldoPosicoes( )==
 
 **Descrição:**
@@ -2985,26 +3153,6 @@ Retorna o valor das posições atuais.
 
 ```
 
-### ==Lucro( )==
-
-**Descrição:**
-
-Retorna o valor do lucro total.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="Lucro( )"}
-         
-<COMANDO>
-            
-    SE(
-        FimDia() 1 ==
-    ENTAO
-        Loga(Lucro(), TempoFimCandle());
-    )
-
-</COMANDO>
-```
 ### ==LucroPosicoes( )==
 
 **Descrição:**
@@ -3018,7 +3166,7 @@ Retorna o lucro das posições em aberto.
 <COMANDO>
                 
         SE(
-            Identificador() 
+            Identificador() 1 =
         ENTAO
             Loga(LucroPosicoes());	
         )
@@ -3026,22 +3174,6 @@ Retorna o lucro das posições em aberto.
 </COMANDO>
 ```
 
-### ==UltExecutado( )==
-
-**Descrição:**
-
-Utilizado para retornar o último preço executado.
-
-**Sintaxe:**
-
-```{.py3 hl_lines="" linenums="60" title="UltExecutado( )"}
-
-<COMANDO>
-                
-
-
-</COMANDO>
-```
 ### ==PosicaoInicial( )==
 
 **Descrição:**
@@ -3063,6 +3195,8 @@ Retorna o número do candle que realizou a primeira avaliação.
 </COMANDO>
 
 ```
+
+
 ### ==PosicaoAtual( )==
 
 **Descrição:**
@@ -3075,11 +3209,7 @@ Retorna o número do candle que realizou a avaliação.
 
 <COMANDO>
                 
-        SE(
-            Identificador();
-        ENTAO
-            Loga(PosicaoAtual(), 'Avaliou');	
-        )
+    Loga(PosicaoFinal())
 
 </COMANDO>
 
@@ -3096,15 +3226,12 @@ Retorna o número do candle que realizou a ultima avaliação.
 
 <COMANDO>
                 
-        SE(
-            Identificador();
-        ENTAO
-            Loga(PosicaoFinal(), 'Avaliou');	
-        )
+    Loga(PosicaoFinal())
 
 </COMANDO>
 
 ```
+
 ### ==QuantidadePosicoes( )==
 
 **Descrição:**
@@ -3129,14 +3256,15 @@ Retorna o total de posições em contratos abertos.
                 #FECHA_ANTERIOR/*GAIN*/,
                 #SNIPERS2/*PRECO*/
         );
-        
-        Loga(QuantidadePosicoes());
     )
+
+    Loga(QuantidadePosicoes());
 
 </COMANDO>
 
 ```
-### ==ReduzPosicoes( )==
+
+### ==ReduzPosicao( )==
 
 **Descrição:**
 
@@ -3246,6 +3374,170 @@ Retorna a quantidade de posições compradas e vendidas.
 </COMANDO>
 ```
 
+### ==AdicionaPosicao( )==
+### ==RotuloPosicao( )==
+
+
+
+
+
+
+
+
+## Saldos e Capital
+
+### ==SaldoEquity( )==
+
+**Descrição:**
+
+Informa o valor em dinheiro disponível na conta.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="SaldoEquity( )"}
+
+<COMANDO>
+            
+    SE(
+        FimDia() 1 =
+    ENTAO
+        Loga(SaldoEquity());
+    )
+
+</COMANDO>
+
+```
+
+### ==CapitalInicial( )==
+
+**Descrição:**
+
+Informa o capital inicial da conta
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="CapitalInicial( )"}
+
+<COMANDO>
+            
+    SE(
+        FimDia() 1 =
+    ENTAO
+        Loga(CapitalInicial());
+    )
+
+</COMANDO>
+
+```
+
+
+### ==CapitalAplicado( )==
+
+**Descrição:**
+
+Informa o capital das posições.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="CapitalAplicado( )"}
+
+<COMANDO>
+            
+    SE(
+        FimDia() 1 =
+    ENTAO
+        Loga(CapitalAplicado());
+    )
+
+</COMANDO>
+
+```
+
+
+### ==CapitalCorrente( )==
+
+**Descrição:**
+
+Informa o capital atual + dinheiros das posições.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="CapitalCorrente( )"}
+
+<COMANDO>
+            
+    SE(
+        FimDia() 1 =
+    ENTAO
+        Loga(CapitalCorrente());
+    )
+
+</COMANDO>
+
+```
+### ==Lucro( )==
+
+**Descrição:**
+
+Retorna o valor do lucro total.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Lucro( )"}
+         
+<COMANDO>
+            
+    SE(
+        FimDia() 1 ==
+    ENTAO
+        Loga(Lucro(), TempoFimCandle());
+    )
+
+</COMANDO>
+```
+### ==UltExecutado( )==
+
+**Descrição:**
+
+Utilizado para retornar o último preço executado.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="UltExecutado( )"}
+
+<COMANDO>
+                
+
+
+</COMANDO>
+```
+
+
+
+### ==Trade( )==
+### ==IdadeTrade( )==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## Ordens
+
+
+
+
+
+
+
 ## **Opções:**
 ### ==DadoOpcao( )==
 
@@ -3263,7 +3555,7 @@ Sua função é retornar todas as informações relevantes de uma opção espec�
 |I - Minima                              |
 |F - Fechamento                          |
 |S - Strike                              |
-|D - Dia úteis até o exercicio das opções|
+|DU - Dia úteis até o exercicio das opções|
 
 **Sintaxe:**
 
@@ -3317,34 +3609,43 @@ Verifica 0 se for dia opções ou retorna quantos dias faltam para as opções.
 
 ```
 
+### ==OpcoesDisponiveisAte( )==
+
+### ==OpcoesVencemAte( )==
+
+### ==StrikeCALL( )==
+
+### ==PrecoOpcao( )==
+### ==ValorIntrinseco( )==
+### ==ValorExtrinseco( )==
+### ==OpcoesDisponiveis( )==
+### ==PUT( )==
+### ==CALL( )==
+
+### ==TravaEmPcall( )==
+### ==TravaCall( )==
+### ==DiasParaExpiracao( )==
+### ==CallTEORICA( )==
+### ==StrikeBASE( )==
+### ==CallMaxMOVE( )==
+### ==ListaOpcoes( )==
 
 
 
 
+## **Estrutura de operação:**
 
+### ==AdicionaEstrutura( )==
+### ==ZeraEstrutura( )==
+### ==ZeraEstruturaVencimento( )==
+### ==ValorEstrutura( )==
 
+### ==CardinalidadeEstrutura( )==
 
+### ==AplicaEstrutura( )==
+### ==AcompanhaEstrutura( )==
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### ==QuantidadeEstrutura( )==
 
 
 
@@ -3555,7 +3856,8 @@ Será apenas executado no final da estratégia, utilizado normalmente para obter
 
 **Descrição:**
 
-É apenas utilizada para o teste de consistência. Essa função retorna válido se um teste for verdadeiro e inválido se caso um teste não funcionar.
+É apenas utilizada para o teste de consistência. Essa função retorna 
+válido se um teste for verdadeiro e inválido se caso um teste não funcionar.
 
 **Sintaxe:**
 
@@ -3695,51 +3997,22 @@ Utilizado para formatar o horário para o excel.
 
 ```
 
-### ==GravaMatriz( )==
-
-**Descrição:**
-
-Grava um arquivo substituindo o anterior(caso existir).
-
-**Parâmetros:**
-
-1.  **NOME_DO_ARQUIVO:** informar o nome do arquivo
-2.  **NOME_VARIAVEL:**  O nome da variavel e ser colocado no arquivo.
 
 
-**Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="GravaMatriz( )"}
 
-<COMANDOFIM>
 
-    GravaMatriz('estatistica.txt', #DADOS);
 
-</COMANDOFIM>
 
-```
 
-### ==ConcatenaMatriz( )==
 
-**Descrição:**
 
-Adicionar informações em um arquivo.
 
-**Parâmetros:**
 
-1.  **NOME_DO_ARQUIVO:** informar o nome do arquivo.
-2.  **NOME_VARIAVEL:**  O nome da variavel e ser colocado no arquivo.
 
-**Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ConcatenaMatriz( )"}
 
-<COMANDO>
 
-    ConcatenaMatriz('estatistica.txt', #DADOS);
-
-</COMANDO>
-```
 
 ## **Teste racional**
 ### ==Mapacores( )==
