@@ -131,7 +131,7 @@ A seguir um exemplo de uma estratégia:
         ENTAO
             CorCandle(Azul)
             ADICIONASTOP(
-                Ativo,
+                'Ativo',
                 0$ 1 - CAPITALCORRENTE() *,
                 'COMPRA'POSICAOATUAL(),
                 POSICAOATUAL(),
@@ -2390,8 +2390,28 @@ Calcula o volume historico negociado no período desejado.
 
 ```
 
+### ==WAD( )==
 
 
+**Descrição:**
+
+Quando o mercado apresenta uma situação de lateralização (ou congestão) 
+é sempre uma tarefa difícil definir se há um processo de distribuição ou 
+de acumulação ocorrendo sob a superfície do mercado. Ciente desse desafio, 
+o grande trader americano Larry Williams projetou o indicador Acumulação/Distribuição 
+Williams (ou WAD, Williams Accumulation/Distribution).
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="Volume( )"}
+
+<COMANDO>
+					
+    Anterior(1, Volume());
+    
+</COMANDO>
+
+```
 
 
 
@@ -3092,6 +3112,25 @@ esse função é necessário colocar dentro do campo **<*ComandoPontoInteresse*>
 </ComandoPontoInteresse>
 
 ```
+
+### ==ZeraPontoInteresse( )==
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Posições:**
 
 ### ==IdentificadorPosicao( )==
@@ -3530,7 +3569,17 @@ Utilizado para retornar o último preço executado.
 
 
 
-## Ordens
+## **Ordens:**
+
+### ==AdicionaOrdem( )==
+
+### ==AdicionaStop( )==
+### ==AjustaStop( )==
+### ==ZeraOrdens( )==
+### ==ZeraDinheiro( )==
+
+
+
 
 
 
@@ -3932,6 +3981,58 @@ válido se um teste for verdadeiro e inválido se caso um teste não funcionar.
 		
 ```
 
+
+
+
+### ==Variavel( )==
+### ==Condicao( )==
+
+### ==CondicaoSS( )==
+
+### ==SetaAtributo( )==
+### ==ZeraVariavel( )==
+### ==TamanhoTexto( )==
+
+**Descrição:**
+
+Retorna o tamanho do texto.
+
+**Parâmetros:**
+
+1.  **STRINGS**
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="TamanhoTexto( )"}
+
+    .  .  .
+
+    SE(
+        TamanhoTexto('DADOS') 5 =
+    ENTAO
+        LOGA('ACEITO')
+    SENAO
+        LOGA('FALSO')
+    )
+
+    .  .  . 
+		
+```
+
+### ==VariavelTexto( )==
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Arquivos**
 ### ==CampoArquivo( )==
 
@@ -4028,7 +4129,7 @@ Utilizado para formatar o horário para o excel.
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ChamaExternoR( )"}
+```{.py3 hl_lines="" linenums="60" title="Mapacores( )"}
 
 <COMANDOINICIO>
 
@@ -4173,13 +4274,13 @@ Utilizado para formatar o horário para o excel.
 ```
 
 ## **Funções externas**
-### ==ChamaExternoR( )==
+### ==ChamaExterno( )==
 
 **Descrição:**
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="ChamaExternoR( )"}
+```{.py3 hl_lines="" linenums="60" title="ChamaExterno( )"}
 
 <COMANDOFIM>
 
