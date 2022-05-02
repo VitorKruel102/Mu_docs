@@ -1,4 +1,4 @@
-# Listagem de ativos registrados
+# Listagem de ativos
 
 
 |ACÕES  |
