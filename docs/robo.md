@@ -13,7 +13,7 @@ por sinais de chevron (sinal de “maior que” e “menor que”), ou seja: ini
 
 **Nota:** ==Os nomes das estruturas são fixos, não podem ser substituidas por outras nomeclaturas.== 
 
-## **Estrutura das tags:**
+## **Estrutura das TAGS:**
 
 ### <*Estrategias*> <*Estrategia*> 
 É o inicio e o fim de toda a estrutura de backtest. Dentro da TAG <*Estrategias*>, podemos utilizar 
@@ -31,7 +31,9 @@ São utilizados para nomear a estratégia e informar o capital inicial da cartei
 ```
 
 ### <*ImpedeGenetico*>
-
+Algoritmo gênetico é utilizado para otimização de estrategia baseado na evolução natural.
+A TAG utilizada para impedir uma avaliação dentro do estudo gênetico, assim melhorando o tempo de execução
+e evitando avaliações indesejáveis .
 
 ### <*ComandoInicio*>
 
@@ -150,18 +152,90 @@ A seguir um exemplo de uma estratégia:
 
 ### <*ComandoAdicionaSTOP*>
 
+Sua funcionalidade é ser um bloco para obter informações específicas referentes
+a entrada em uma operação utilizando o AdicionaStop(). Podemos loga, criar variáveis,
+matrizes e etc...
+
+```{.py3 hl_lines="" linenums="70" title=""}
+
+<ComandoAdicionaSTOP>
+
+    SETA(#stop, Minima())
+    SETA(#entrada, Fechamento())
+
+    SETA(#risco(FIM), #stop #entrada -)
+    SETA(#horaexecutada, hora() minuto())
+
+</ComandoAdicionaSTOP>
+```
 ### <*ComandoAjustaSTOP*>
 
+Utilizamos esté bloco para extrair informações refetente a função AjustaSTOP().
+
+```{.py3 hl_lines="" linenums="70" title=""}
+
+<ComandoAjustaSTOP>
+
+    SETA(#motivo(FIM), #ULTMOTIVORISCO)
+    SETA(#preco_ajuste(FIM), #ULTPRECOEXECUTADO)
+
+</ComandoAjustaSTOP>
+```
 ### <*ComandoZeraRISCO*>
+
+Utilizamos esté bloco para extrair informações no momento que você zerou a posição.
+
+```{.py3 hl_lines="" linenums="70" title=""}
+
+<ComandoZeraRISCO>
+
+    
+    SETA(#motivos(FIM), #ULTMOTIVORISCO)
+    SETA(#quantidade(FIM), #ULTQUANTEXECUTADO)
+
+</ComandoZeraRISCO>
+```
 
 ### <*ComandoAdicionaGATILHO*>
 
 ### <*ComandoExecutaGATILHO*>
 
 ### <*ComandoAbrePosicao*>
+Utilizamos esté bloco para extrair informações no momento que você abriu uma posição.
 
+```{.py3 hl_lines="" linenums="70" title=""}
+
+<ComandoAbrePosicao>
+    
+    SETA(#preco_entrada, fechamento())
+    
+</ComandoAbrePosicao>
+```
 ### <*ComandoFechaPosicao*>
+Utilizamos esté bloco para extrair informações no momento que você fechou uma posição.
+
+```{.py3 hl_lines="" linenums="70" title=""}
+
+<ComandoFechaPosicao>
+    
+    SETA(#motivo_saida(FIM), #ULTMOTIVORISCO)
+    SETA(#ID(FIM), #ULTIDENTIFICADOREXECUTADO)
+    SETA(#quantidade(FIM), #ULTQUANTIDADE)
+    SETA(#preco_risco(FIM), #ULTPRECORISCO)
+
+</ComandoFechaPosicao>
+```
 ### <*ComandoPontoINTERESSE*>
+Utilizamos esté bloco para extrair informações no momento que você adicionou um ponto de interesse uma posição.
+
+```{.py3 hl_lines="" linenums="70" title=""}
+
+<ComandoPontoINTERESSE>
+
+    SETA(#AVALIACAO_INTERESSE(FIM), Abertura() Fechamento() -)
+    
+</ComandoPontoINTERESSE>
+```
 
 ### <*Naodesenha*>
 
@@ -3742,7 +3816,7 @@ A tag **Ativo** é o nome do ativo que vai acontecer todos os testes.
                   
 ```
 
-### <*Numero*> <*Nome*>
+### <*Nome*>
 
 **Número** é para determinar o número do teste, a tag **Nome** nesta parte da estrutura é utilizado para identificar qual validação que está sendo feita.
 
