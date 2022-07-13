@@ -81,7 +81,7 @@ Essa tag é responsável por informar os custos/taxas das operações, são alte
 </CUSTOS>
 ```   
 
-### <*Periodo*>
+### <*Periodo*> <*PeriodoGrafico*>
 
 É o período preferencial da estratégia, mas não é necessário mudar todas as vezes que for estudar outros tempos gráficos, dentro do sistema conseguimos alterar para um novo período, apenas **DIGITANDO** o novo período no gráfico e clicando **ENTER** o sistama mudará automaticamente.
 
@@ -92,6 +92,16 @@ Essa tag é responsável por informar os custos/taxas das operações, são alte
 <PERIODOSINTERESSE> 30 </PERIODOSINTERESSE>
                  
 ```
+### <*PeriodoInteresse*>
+São os períodos de interesse, que quando adicionado plot um gráfico que mostra as movimentações do mercado dentro de cada periodo. 
+**Maximo: 4 períodos.**
+
+```{.py3 hl_lines="" linenums="23" title=""}
+
+<PERIODOSINTERESSE> 60,15,5 </PERIODOSINTERESSE>
+                 
+```
+
 
 ### TAGS Controle de Risco
 
@@ -2974,6 +2984,28 @@ Retorna quantos dias tem o mês
 
 </COMANDO>
 ```
+### ==HoraMinuto( )==
+
+**Descrição:**
+
+Sua função é retornar o valor atual da HHMM.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="HoraMinuto( )"}
+
+<COMANDO>
+
+    SE(
+        HoraMinuto() 1025 >
+    ENTAO
+        Loga('Horario de interesse.');
+    SENAO
+    )
+
+</COMANDO>
+
+```
 ### ==DMA( )==
 
 ### ==DMAF( )==
@@ -3080,6 +3112,61 @@ Retorna os dias úteis que faltam até a terceira segunda do mês.
 </COMANDO>
 ```
 
+### ==TrocouTempo( )==
+
+**Descrição:**
+
+Retorna Verdadeiro se mudou o candle.
+
+**Parâmetros:**
+
+1.  **Periodo_de_interesse:** Tempo gráfico.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="TrocouTempo( )"}
+
+<COMANDO>
+
+    SE(
+        TrocouTempo(D)
+    ENTAO
+        Loga('Novo dia')
+    SENAO
+    )
+
+</COMANDO>
+```
+
+### ==AtributoTempo( )==
+
+**Descrição:**
+
+Retorna a expressão adicionado no parâmetro no periodo selecionado.
+
+**Parâmetros:**
+
+1.  **Periodo_de_interesse:** Tempo gráfico.
+2.  **Expressão** 
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="AtributoTempo( )"}
+
+<COMANDO>
+
+    SE(
+        AtributoTempo(D, minima())
+    ENTAO
+        Loga('Retorna a minima do dia')
+    SENAO
+    )
+
+</COMANDO>
+```
+
+
+
 ## **Break:**
 
 
@@ -3163,17 +3250,19 @@ Ela é responsável por analisar processos, o resultado será colocado no arquiv
 
 
 
-## **Reversão:**
+## **Ponto de Interesse:**
 ### ==AdicionaPontoInteresse( )==
 
 **Descrição:**
 
-É utilizado para identificar pontos específicos para realizar reversões (Gradiente). Para utilizar 
+É utilizado para identificar pontos específicos para realizar reversões (Gradiente) ou entrada. Para utilizar 
 esse função é necessário colocar dentro do campo **<*ComandoPontoInteresse*>**
 
 **Parâmetros:**
 
-1.  **PONTO_DE_INTERESSE:** Posição para a reversão.
+1.  **PONTO_DE_INTERESSE:** Posição de entrada.
+2.  **Variavel:** 
+3.  **Expressão:**
 
 **Sintaxe:**
 
@@ -3181,18 +3270,72 @@ esse função é necessário colocar dentro do campo **<*ComandoPontoInteresse*>
 
 <ComandoPontoInteresse>
 					
-    AdicionaPontoInteresse(#FimDiaANT 30 +)
+    AdicionaPontoInteresse( )
 
 </ComandoPontoInteresse>
 
 ```
+### ==AcionaComandoPontoInteresse( )==
+**Descrição:**
 
+É utilizado adicionar uma posição.
+
+**Parâmetros:**
+
+1.  **PONTO_DE_INTERESSE:** Posição de entrada.
+2.  **Variavel:** 
+3.  **Expressão:**
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="AdicionaPontoInteresse( )"}
+
+<Comando>
+					
+    AdicionaPontoInteresse( )
+
+</Comando>
+
+```
 ### ==ZeraPontoInteresse( )==
 
+### ==#ResPontoInteresse==
+**Descrição:**
+
+Retorna o segundo parâmetro do AdicionaPontoInteresse.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="#RespostaPontoInteresse"}
+
+<Comando>
+					
+    Seta(#valores_interesse, #RespostaPontoInteresse)
+
+</Comando>
+
+```
 
 
+## **Adiciona Gráfico:**
 
+### ==AdicionaClassificador( )==
 
+**Descrição:**
+
+Cria um g´rafico de disperssão.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="IdentificadorPosicao( )"}
+
+<COMANDO>
+            
+    AdicionaClassificador(#retornos)
+        
+</COMANDO>
+
+```
 
 
 
@@ -3491,8 +3634,26 @@ Retorna a quantidade de posições compradas e vendidas.
 ### ==RotuloPosicao( )==
 
 
+### ==EscalaPosicoes( )==
 
+**Descrição:**
 
+Reverter as posições, se tiver vendido, reverte para comprada, o contrario também é verdadeiro.
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="EscalaPosicoes( )"}
+
+<COMANDO>
+
+    SE(
+        Minima() #snipers2 <
+    ENTAO
+    EscalaPosicoes()
+    )
+
+</COMANDO>
+```
 
 
 
@@ -4054,7 +4215,27 @@ válido se um teste for verdadeiro e inválido se caso um teste não funcionar.
     );
 		
 ```
+### ==Avalia( )==
 
+**Descrição:**
+
+Avalia uma string como se fosse um comando.
+
+**Parâmetros:**
+
+1.  **Variavel tipo string**
+
+**Sintaxe:**
+
+```{.py3 hl_lines="" linenums="60" title="AceitaTAvaliaeste( )"}
+
+<ComandoFim>
+
+    Seta(#entrada,  'AtributoTempo(D, minima())')
+
+</COMANDOFIM>
+
+```
 
 
 
@@ -4383,3 +4564,19 @@ Sua função é para utilizar funções de códigos em formato de python.
     
 </COMANDOFIM>
 ```
+
+## **Atalhos no teclado**
+
+### == [ ==
+
+Avança um dia.
+### == ] ==
+
+Volta um dia.
+### == Shift + [ ==
+
+Avança um mes.
+
+### == Shift + ] ==
+
+Volta um mes.
