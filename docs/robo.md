@@ -3278,7 +3278,7 @@ esse função é necessário colocar dentro do campo **<*ComandoPontoInteresse*>
 ### ==AcionaComandoPontoInteresse( )==
 **Descrição:**
 
-É utilizado adicionar uma posição.
+É utilizado acionar a qualquer momento o Ponto de Interesse.
 
 **Parâmetros:**
 
@@ -3288,11 +3288,11 @@ esse função é necessário colocar dentro do campo **<*ComandoPontoInteresse*>
 
 **Sintaxe:**
 
-```{.py3 hl_lines="" linenums="60" title="AdicionaPontoInteresse( )"}
+```{.py3 hl_lines="" linenums="60" title="AcionaComandoPontoInteresse( )"}
 
 <Comando>
 					
-    AdicionaPontoInteresse( )
+    AcionaComandoPontoInteresse()
 
 </Comando>
 
